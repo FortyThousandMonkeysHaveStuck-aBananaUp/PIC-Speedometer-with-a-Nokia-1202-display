@@ -1,0 +1,938 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\PIC_Capture.X.production.obj
+cinit CODE 0 15 15 31 2
+text1 CODE 0 E69 E69 197 2
+text2 CODE 0 93F 93F 2A 2
+text3 CODE 0 D8B D8B DE 2
+text4 CODE 0 8C3 8C3 19 2
+text5 CODE 0 918 918 27 2
+text6 CODE 0 8A3 8A3 F 2
+text7 CODE 0 A17 A17 4D 2
+text8 CODE 0 A64 A64 5B 2
+text9 CODE 0 7CD 7CD 31 2
+text10 CODE 0 8F8 8F8 20 2
+text11 CODE 0 894 894 F 2
+text12 CODE 0 969 969 2F 2
+text13 CODE 0 B93 B93 8E 2
+text14 CODE 0 CB8 CB8 D3 2
+text15 CODE 0 46 46 B8 2
+text16 CODE 0 B25 B25 6E 2
+text17 CODE 0 ABF ABF 66 2
+text18 CODE 0 998 998 3E 2
+text19 CODE 0 9D6 9D6 41 2
+text20 CODE 0 C21 C21 97 2
+maintext CODE 0 61C 61C 1B1 2
+cstackCOMMON COMMON 1 70 70 8 1
+cstackBANK0 BANK0 1 20 20 40 1
+cstackBANK1 BANK1 1 C3 C3 4 1
+inittext CODE 0 8B2 8B2 11 2
+intentry CODE 0 4 4 E 2
+bssBANK0 BANK0 1 60 60 7 1
+bssBANK1 BANK1 1 BC BC 7 1
+stringtext STRCODE 0 100 100 51C 2
+idataBANK0 CODE 0 88D 88D 7 2
+idataBANK1 CODE 0 8DC 8DC 1C 2
+dataBANK0 BANK0 1 67 67 7 1
+dataBANK1 BANK1 1 A0 A0 1C 1
+bssCOMMON COMMON 1 78 78 2 1
+$C:\Users\Pz\AppData\Local\Temp\sno.obj
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 12 12 3 2
+config CONFIG 0 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 6E-6F 1
+RAM C7-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 6E-6F 1
+BANK1 C7-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 3-3 2
+CONST FE-FF 2
+CONST 7FE-88C 2
+CONST 1000-1FFF 2
+ENTRY 3-3 2
+ENTRY FE-FF 2
+ENTRY 7FE-88C 2
+ENTRY 1000-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 3-3 2
+CODE FE-FF 2
+CODE 7FE-88C 2
+CODE 1000-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 7A-7D 1
+EEDATA 2100-21FF 2
+STRCODE 3-3 2
+STRCODE FE-FF 2
+STRCODE 7FE-88C 2
+STRCODE 1000-1FFF 2
+STRING 3-3 2
+STRING FE-FF 2
+STRING 7FE-88C 2
+STRING 1000-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\PIC_Capture.X.production.obj
+15 cinit CODE >1725:C:\Users\Pz\AppData\Local\Temp\sno.
+15 cinit CODE >1728:C:\Users\Pz\AppData\Local\Temp\sno.
+15 cinit CODE >1804:C:\Users\Pz\AppData\Local\Temp\sno.
+16 cinit CODE >1805:C:\Users\Pz\AppData\Local\Temp\sno.
+17 cinit CODE >1806:C:\Users\Pz\AppData\Local\Temp\sno.
+18 cinit CODE >1807:C:\Users\Pz\AppData\Local\Temp\sno.
+19 cinit CODE >1808:C:\Users\Pz\AppData\Local\Temp\sno.
+1A cinit CODE >1809:C:\Users\Pz\AppData\Local\Temp\sno.
+1B cinit CODE >1810:C:\Users\Pz\AppData\Local\Temp\sno.
+1C cinit CODE >1811:C:\Users\Pz\AppData\Local\Temp\sno.
+1D cinit CODE >1812:C:\Users\Pz\AppData\Local\Temp\sno.
+1E cinit CODE >1813:C:\Users\Pz\AppData\Local\Temp\sno.
+23 cinit CODE >1817:C:\Users\Pz\AppData\Local\Temp\sno.
+24 cinit CODE >1818:C:\Users\Pz\AppData\Local\Temp\sno.
+25 cinit CODE >1819:C:\Users\Pz\AppData\Local\Temp\sno.
+26 cinit CODE >1820:C:\Users\Pz\AppData\Local\Temp\sno.
+27 cinit CODE >1821:C:\Users\Pz\AppData\Local\Temp\sno.
+28 cinit CODE >1822:C:\Users\Pz\AppData\Local\Temp\sno.
+29 cinit CODE >1823:C:\Users\Pz\AppData\Local\Temp\sno.
+2A cinit CODE >1824:C:\Users\Pz\AppData\Local\Temp\sno.
+2B cinit CODE >1825:C:\Users\Pz\AppData\Local\Temp\sno.
+2E cinit CODE >1829:C:\Users\Pz\AppData\Local\Temp\sno.
+2F cinit CODE >1830:C:\Users\Pz\AppData\Local\Temp\sno.
+30 cinit CODE >1831:C:\Users\Pz\AppData\Local\Temp\sno.
+31 cinit CODE >1832:C:\Users\Pz\AppData\Local\Temp\sno.
+32 cinit CODE >1833:C:\Users\Pz\AppData\Local\Temp\sno.
+33 cinit CODE >1834:C:\Users\Pz\AppData\Local\Temp\sno.
+34 cinit CODE >1835:C:\Users\Pz\AppData\Local\Temp\sno.
+35 cinit CODE >1836:C:\Users\Pz\AppData\Local\Temp\sno.
+36 cinit CODE >1837:C:\Users\Pz\AppData\Local\Temp\sno.
+37 cinit CODE >1840:C:\Users\Pz\AppData\Local\Temp\sno.
+38 cinit CODE >1841:C:\Users\Pz\AppData\Local\Temp\sno.
+39 cinit CODE >1842:C:\Users\Pz\AppData\Local\Temp\sno.
+3A cinit CODE >1843:C:\Users\Pz\AppData\Local\Temp\sno.
+3B cinit CODE >1844:C:\Users\Pz\AppData\Local\Temp\sno.
+3C cinit CODE >1845:C:\Users\Pz\AppData\Local\Temp\sno.
+3D cinit CODE >1846:C:\Users\Pz\AppData\Local\Temp\sno.
+3E cinit CODE >1847:C:\Users\Pz\AppData\Local\Temp\sno.
+3F cinit CODE >1848:C:\Users\Pz\AppData\Local\Temp\sno.
+40 cinit CODE >1851:C:\Users\Pz\AppData\Local\Temp\sno.
+41 cinit CODE >1852:C:\Users\Pz\AppData\Local\Temp\sno.
+42 cinit CODE >1858:C:\Users\Pz\AppData\Local\Temp\sno.
+42 cinit CODE >1860:C:\Users\Pz\AppData\Local\Temp\sno.
+43 cinit CODE >1861:C:\Users\Pz\AppData\Local\Temp\sno.
+4 intentry CODE >152:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C21 text20 CODE >152:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C21 text20 CODE >155:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C24 text20 CODE >157:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C25 text20 CODE >158:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C26 text20 CODE >159:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C27 text20 CODE >160:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C28 text20 CODE >161:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C2B text20 CODE >162:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C2B text20 CODE >165:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C32 text20 CODE >168:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C35 text20 CODE >169:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C36 text20 CODE >170:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C38 text20 CODE >171:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C39 text20 CODE >174:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C45 text20 CODE >175:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C46 text20 CODE >176:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C49 text20 CODE >181:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C5E text20 CODE >184:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C63 text20 CODE >185:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C67 text20 CODE >186:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C68 text20 CODE >189:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C6A text20 CODE >190:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C6C text20 CODE >191:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C6D text20 CODE >192:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C70 text20 CODE >193:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C72 text20 CODE >197:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C75 text20 CODE >202:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C7C text20 CODE >204:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C8A text20 CODE >205:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C8B text20 CODE >206:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C91 text20 CODE >210:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C9B text20 CODE >212:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C9C text20 CODE >213:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+C9F text20 CODE >214:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+CA3 text20 CODE >215:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+CA5 text20 CODE >216:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+CA7 text20 CODE >217:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+CA9 text20 CODE >218:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+CAB text20 CODE >219:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+CAC text20 CODE >224:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+9D6 text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+9D6 text19 CODE >119:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+9E0 text19 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+9E2 text19 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+9F6 text19 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+9FF text19 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+A08 text19 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+A0E text19 CODE >128:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
+998 text18 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+998 text18 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+99C text18 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9A0 text18 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9A2 text18 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9A4 text18 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9AB text18 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9AF text18 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9B0 text18 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9B7 text18 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9BF text18 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9C5 text18 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9C6 text18 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9CD text18 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+9D1 text18 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lwdiv.c
+ABF text17 CODE >226:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+AC2 text17 CODE >228:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+ACA text17 CODE >229:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+B1C text17 CODE >230:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+B25 text16 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B25 text16 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B2F text16 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B36 text16 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B3A text16 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B42 text16 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B47 text16 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B4B text16 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B55 text16 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B5D text16 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B5D text16 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B62 text16 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B64 text16 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B6C text16 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B72 text16 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B74 text16 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B7A text16 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B7C text16 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B8E text16 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B91 text16 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+B92 text16 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+46 text15 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+46 text15 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+57 text15 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+5E text15 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+6D text15 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+74 text15 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+7A text15 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+7F text15 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+91 text15 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+A3 text15 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+A7 text15 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+A8 text15 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+AE text15 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+AF text15 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+B5 text15 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+B9 text15 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+C1 text15 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+CD text15 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+D7 text15 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+D8 text15 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+E0 text15 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+E4 text15 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftdiv.c
+CB8 text14 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+CB8 text14 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+CC9 text14 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+CD0 text14 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+CDF text14 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+CE6 text14 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+CEB text14 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+CFD text14 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D0F text14 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D13 text14 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D14 text14 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D15 text14 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D1B text14 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D21 text14 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D25 text14 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D27 text14 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D35 text14 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D3D text14 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D45 text14 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D49 text14 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D4D text14 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D4F text14 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D5D text14 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D65 text14 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D6D text14 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+D71 text14 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftmul.c
+B93 text13 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+B93 text13 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BA4 text13 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BAD text13 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BBF text13 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BC0 text13 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BC6 text13 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BCD text13 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BCF text13 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BD1 text13 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BD6 text13 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BDF text13 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BE8 text13 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BEF text13 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BF3 text13 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+BFC text13 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+C05 text13 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+C07 text13 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+C07 text13 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+C0A text13 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+C0D text13 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+C18 text13 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\fttol.c
+969 text12 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lltoft.c
+969 text12 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lltoft.c
+96F text12 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lltoft.c
+973 text12 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lltoft.c
+97C text12 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lltoft.c
+980 text12 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lltoft.c
+981 text12 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\lltoft.c
+894 text11 CODE >359:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+894 text11 CODE >361:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+898 text11 CODE >362:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8F8 text10 CODE >368:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8FB text10 CODE >370:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+900 text10 CODE >371:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+903 text10 CODE >372:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+904 text10 CODE >373:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+905 text10 CODE >375:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+90A text10 CODE >377:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+90B text10 CODE >378:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+90D text10 CODE >379:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+90F text10 CODE >380:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+90F text10 CODE >381:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+910 text10 CODE >383:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+911 text10 CODE >384:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+913 text10 CODE >375:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7CD text9 CODE >410:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7D0 text9 CODE >413:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7D7 text9 CODE >418:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7DE text9 CODE >419:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7E3 text9 CODE >420:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7F1 text9 CODE >421:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7F7 text9 CODE >422:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+7FD text9 CODE >424:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+A64 text8 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A64 text8 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A67 text8 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A69 text8 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A6E text8 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A70 text8 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A72 text8 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A77 text8 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A7B text8 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A7D text8 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A81 text8 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A83 text8 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A85 text8 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A8C text8 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A90 text8 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A91 text8 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A98 text8 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+AA0 text8 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+AA6 text8 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+AA7 text8 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+AAE text8 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+AB2 text8 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+AB5 text8 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+ABA text8 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awdiv.c
+A17 text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A17 text7 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A1A text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A1C text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A21 text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A23 text7 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A25 text7 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A2A text7 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A2E text7 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A30 text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A32 text7 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A39 text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A3D text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A3E text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A46 text7 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A4C text7 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A53 text7 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A57 text7 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A5A text7 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+A5F text7 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\awmod.c
+8A3 text6 CODE >353:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8A3 text6 CODE >355:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8A7 text6 CODE >356:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+918 text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+918 text5 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+91C text5 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+91E text5 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+926 text5 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+92D text5 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+934 text5 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+938 text5 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul16.c
+8C3 text4 CODE >389:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8C4 text4 CODE >391:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8C7 text4 CODE >392:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8C8 text4 CODE >393:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8C9 text4 CODE >395:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8CE text4 CODE >397:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8CF text4 CODE >398:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8D1 text4 CODE >399:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8D3 text4 CODE >400:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8D3 text4 CODE >401:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8D4 text4 CODE >403:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8D5 text4 CODE >404:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+8D7 text4 CODE >395:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+D8B text3 CODE >426:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+D8E text3 CODE >428:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+DB2 text3 CODE >429:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+DE0 text3 CODE >430:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E0E text3 CODE >431:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E3C text3 CODE >432:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E68 text3 CODE >433:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+93F text2 CODE >435:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+942 text2 CODE >437:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+94E text2 CODE >439:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+95A text2 CODE >440:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+960 text2 CODE >437:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E69 text1 CODE >446:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E69 text1 CODE >449:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E6E text1 CODE >451:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E6F text1 CODE >452:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E70 text1 CODE >453:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E75 text1 CODE >455:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E78 text1 CODE >456:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E79 text1 CODE >458:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E7E text1 CODE >460:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E84 text1 CODE >470:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E8A text1 CODE >472:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E90 text1 CODE >482:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E96 text1 CODE >484:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+E9C text1 CODE >485:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EA2 text1 CODE >487:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EA8 text1 CODE >488:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EAE text1 CODE >489:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EB4 text1 CODE >490:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EBA text1 CODE >492:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EBF text1 CODE >494:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EC0 text1 CODE >496:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EC5 text1 CODE >498:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+ECC text1 CODE >500:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EDB text1 CODE >502:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EE1 text1 CODE >500:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EEA text1 CODE >507:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+EF0 text1 CODE >511:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F05 text1 CODE >513:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F0C text1 CODE >514:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F10 text1 CODE >527:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F11 text1 CODE >530:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F17 text1 CODE >532:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F2C text1 CODE >533:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F2E text1 CODE >534:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F30 text1 CODE >535:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F32 text1 CODE >537:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F45 text1 CODE >538:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F67 text1 CODE >539:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F89 text1 CODE >541:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+F98 text1 CODE >542:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FA7 text1 CODE >543:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FB6 text1 CODE >545:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FC0 text1 CODE >546:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FC4 text1 CODE >547:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FC5 text1 CODE >550:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FCB text1 CODE >554:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FCF text1 CODE >556:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FD0 text1 CODE >558:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FD5 text1 CODE >560:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FDB text1 CODE >561:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FE1 text1 CODE >562:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FE7 text1 CODE >563:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FED text1 CODE >564:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FF3 text1 CODE >565:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+FF9 text1 CODE >558:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\Nokia_display_driver/STE2007_nokia_1202_display.c
+61C maintext CODE >45:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+61C maintext CODE >49:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+61F maintext CODE >50:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+620 maintext CODE >51:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+621 maintext CODE >52:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+622 maintext CODE >53:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+623 maintext CODE >54:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+624 maintext CODE >55:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+628 maintext CODE >56:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+629 maintext CODE >59:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+62C maintext CODE >60:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+62D maintext CODE >61:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+62E maintext CODE >62:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+62F maintext CODE >63:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+630 maintext CODE >67:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+631 maintext CODE >68:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+632 maintext CODE >69:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+633 maintext CODE >70:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+634 maintext CODE >73:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+635 maintext CODE >74:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+636 maintext CODE >75:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+637 maintext CODE >79:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+63A maintext CODE >80:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+63B maintext CODE >82:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+63C maintext CODE >83:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+63D maintext CODE >84:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+63E maintext CODE >86:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+641 maintext CODE >89:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+642 maintext CODE >90:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+65E maintext CODE >92:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+662 maintext CODE >95:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+66A maintext CODE >96:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+686 maintext CODE >101:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+68A maintext CODE >102:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+68D maintext CODE >105:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+68E maintext CODE >106:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+68F maintext CODE >110:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+697 maintext CODE >114:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+69A maintext CODE >115:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+6A4 maintext CODE >116:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+6DA maintext CODE >118:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+6DD maintext CODE >119:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+6E7 maintext CODE >120:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+71D maintext CODE >124:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+722 maintext CODE >126:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+724 maintext CODE >127:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+734 maintext CODE >129:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+738 maintext CODE >131:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+73A maintext CODE >137:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+775 maintext CODE >138:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+78E maintext CODE >139:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+79F maintext CODE >141:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+7A7 maintext CODE >142:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+7C3 maintext CODE >144:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+7CC maintext CODE >112:C:\Users\Pz\Desktop\Education STM_C-C++\0_Testing\PIC_capture_repeat\PIC_Capture.X\main.c
+8B2 inittext CODE >1778:C:\Users\Pz\AppData\Local\Temp\sno.
+8B2 inittext CODE >1779:C:\Users\Pz\AppData\Local\Temp\sno.
+8B3 inittext CODE >1780:C:\Users\Pz\AppData\Local\Temp\sno.
+8B4 inittext CODE >1781:C:\Users\Pz\AppData\Local\Temp\sno.
+8B5 inittext CODE >1782:C:\Users\Pz\AppData\Local\Temp\sno.
+8B6 inittext CODE >1789:C:\Users\Pz\AppData\Local\Temp\sno.
+8B6 inittext CODE >1790:C:\Users\Pz\AppData\Local\Temp\sno.
+8B9 inittext CODE >1791:C:\Users\Pz\AppData\Local\Temp\sno.
+8BA inittext CODE >1792:C:\Users\Pz\AppData\Local\Temp\sno.
+8BB inittext CODE >1793:C:\Users\Pz\AppData\Local\Temp\sno.
+8BC inittext CODE >1794:C:\Users\Pz\AppData\Local\Temp\sno.
+8BD inittext CODE >1795:C:\Users\Pz\AppData\Local\Temp\sno.
+8BE inittext CODE >1796:C:\Users\Pz\AppData\Local\Temp\sno.
+8BF inittext CODE >1797:C:\Users\Pz\AppData\Local\Temp\sno.
+8C0 inittext CODE >1798:C:\Users\Pz\AppData\Local\Temp\sno.
+8C1 inittext CODE >1799:C:\Users\Pz\AppData\Local\Temp\sno.
+8C2 inittext CODE >1800:C:\Users\Pz\AppData\Local\Temp\sno.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_V 60 0 BANK0 1 bssBANK0 dist/default/production\PIC_Capture.X.production.obj
+___latbits 2 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+___awdiv@counter 21 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+_TMR1_overflow_counter 78 0 COMMON 1 bssCOMMON dist/default/production\PIC_Capture.X.production.obj
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 C7 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+___ftdiv@exp 38 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@num 59 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+_T1CONbits 10 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+transmit_data@i 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+_w1 67 0 BANK0 1 dataBANK0 dist/default/production\PIC_Capture.X.production.obj
+__Lstringtext 0 0 ABS 0 stringtext -
+delay_1@i 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+delay_2@i 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+_TMR0 1 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_TMR1 E 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_TTTT 63 0 BANK0 1 bssBANK0 dist/default/production\PIC_Capture.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Pz\AppData\Local\Temp\sno.obj
+_main C38 0 CODE 0 maintext dist/default/production\PIC_Capture.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+start 24 0 CODE 0 init C:\Users\Pz\AppData\Local\Temp\sno.obj
+__size_of___awdiv 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of___awmod 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of___ftdiv 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of___ftmul 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of___fttol 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of___lwdiv 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_nlcd_Font C24 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+?___lmul 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+?___wmul 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+Page_and_Column_adress_set@Page 24 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+_T_computing 157E 0 CODE 0 text17 dist/default/production\PIC_Capture.X.production.obj
+_OPTION_REGbits 81 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+___ftdiv@f1 2D 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___ftdiv@f2 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___ftdiv@f3 35 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__end_of_Display_symbol 1CD2 0 CODE 0 text3 dist/default/production\PIC_Capture.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__Hpowerup 0 0 CODE 0 powerup -
+___awmod@sign 2B 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\sno.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\sno.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\sno.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\sno.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\sno.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\Pz\AppData\Local\Temp\sno.obj
+transmit_command@i 21 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+_nlcd_Font 224 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@F1039 A0 0 BANK1 1 dataBANK1 dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@F1041 B2 0 BANK1 1 dataBANK1 dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@d 2C 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__end_of_something 1970 0 CODE 0 text20 dist/default/production\PIC_Capture.X.production.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+ste2007_display_driver@speed 49 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__size_of_something 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+___awdiv@sign 22 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+___ftmul@f1 3A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___ftmul@f2 3D 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+_delay_1 1146 0 CODE 0 text6 dist/default/production\PIC_Capture.X.production.obj
+_delay_2 1128 0 CODE 0 text11 dist/default/production\PIC_Capture.X.production.obj
+___wmul@multiplicand 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+T_computing@T 36 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___awdiv@dividend 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+_something 1842 0 CODE 0 text20 dist/default/production\PIC_Capture.X.production.obj
+__end_of___lmul 142E 0 CODE 0 text19 dist/default/production\PIC_Capture.X.production.obj
+__end_of___wmul 127E 0 CODE 0 text5 dist/default/production\PIC_Capture.X.production.obj
+T_computing@w0 3A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___fttol@f1 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+___awdiv@divisor 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+__size_of___ftpack 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__end_of___awdiv 157E 0 CODE 0 text8 dist/default/production\PIC_Capture.X.production.obj
+__end_of___awmod 14C8 0 CODE 0 text7 dist/default/production\PIC_Capture.X.production.obj
+__end_of___ftdiv 1FC 0 CODE 0 text15 dist/default/production\PIC_Capture.X.production.obj
+__end_of___ftmul 1B16 0 CODE 0 text14 dist/default/production\PIC_Capture.X.production.obj
+__end_of___fttol 1842 0 CODE 0 text13 dist/default/production\PIC_Capture.X.production.obj
+__end_of___lwdiv 13AC 0 CODE 0 text18 dist/default/production\PIC_Capture.X.production.obj
+_ste2007_display_driver 1CD2 0 CODE 0 text1 dist/default/production\PIC_Capture.X.production.obj
+___lwdiv@quotient 22 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__size_of___lltoft 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+start_initialization 2A 0 CODE 0 cinit dist/default/production\PIC_Capture.X.production.obj
+_TRISAbits 85 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_TRISCbits 87 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@speed_word 37 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__pcstackBANK1 C3 0 BANK1 1 cstackBANK1 dist/default/production\PIC_Capture.X.production.obj
+___fttol@exp1 29 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___fttol@lval 25 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+_output_character_array 127E 0 CODE 0 text2 dist/default/production\PIC_Capture.X.production.obj
+___lltoft@c 25 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___ftpack 164A 0 CODE 0 text16 dist/default/production\PIC_Capture.X.production.obj
+___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+transmit_command@command 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Pz\AppData\Local\Temp\sno.obj
+__end_of___ftpack 1726 0 CODE 0 text16 dist/default/production\PIC_Capture.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 8C 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 224 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+___lwdiv@counter 21 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+Page_and_Column_adress_set@Column 77 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+___lltoft 12D2 0 CODE 0 text12 dist/default/production\PIC_Capture.X.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit 2A 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__end_of___lltoft 1330 0 CODE 0 text12 dist/default/production\PIC_Capture.X.production.obj
+_transmit_command 11F0 0 CODE 0 text10 dist/default/production\PIC_Capture.X.production.obj
+__Linittext 0 0 ABS 0 inittext -
+_PORTBbits 6 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_PORTCbits 7 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+Display_symbol@char_0 26 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+_INTCONbits B 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 24 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 24 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__end_of_temp_char C38 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+___lmul 13AC 0 CODE 0 text19 dist/default/production\PIC_Capture.X.production.obj
+___wmul 1230 0 CODE 0 text5 dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@Discharge_0 53 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@Discharge_1 55 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@Discharge_2 57 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__end_of_T_computing 164A 0 CODE 0 text17 dist/default/production\PIC_Capture.X.production.obj
+__S0 2008 0 ABS 0 - -
+__S1 C7 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_dis BC 0 BANK1 1 bssBANK1 dist/default/production\PIC_Capture.X.production.obj
+__end_of_Page_and_Column_adress_set FFC 0 CODE 0 text9 dist/default/production\PIC_Capture.X.production.obj
+saved_w 7E 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_temp_char C24 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+__size_of_Display_symbol 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__Lintentry 8 0 CODE 0 intentry -
+__stringtab 200 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Pz\AppData\Local\Temp\sno.obj
+__end_of_ste2007_display_driver 2000 0 CODE 0 text1 dist/default/production\PIC_Capture.X.production.obj
+__pdataBANK0 67 0 BANK0 1 dataBANK0 dist/default/production\PIC_Capture.X.production.obj
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/default/production\PIC_Capture.X.production.obj
+__size_of___lmul 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
+___awmod@counter 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+_PIE1bits 8C 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+output_character_array@i 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__ptext10 11F0 0 CODE 0 text10 dist/default/production\PIC_Capture.X.production.obj
+__ptext11 1128 0 CODE 0 text11 dist/default/production\PIC_Capture.X.production.obj
+__ptext12 12D2 0 CODE 0 text12 dist/default/production\PIC_Capture.X.production.obj
+__ptext13 1726 0 CODE 0 text13 dist/default/production\PIC_Capture.X.production.obj
+__ptext14 1970 0 CODE 0 text14 dist/default/production\PIC_Capture.X.production.obj
+__ptext15 8C 0 CODE 0 text15 dist/default/production\PIC_Capture.X.production.obj
+__ptext16 164A 0 CODE 0 text16 dist/default/production\PIC_Capture.X.production.obj
+__ptext17 157E 0 CODE 0 text17 dist/default/production\PIC_Capture.X.production.obj
+__ptext18 1330 0 CODE 0 text18 dist/default/production\PIC_Capture.X.production.obj
+__ptext19 13AC 0 CODE 0 text19 dist/default/production\PIC_Capture.X.production.obj
+__ptext20 1842 0 CODE 0 text20 dist/default/production\PIC_Capture.X.production.obj
+___awdiv 14C8 0 CODE 0 text8 dist/default/production\PIC_Capture.X.production.obj
+___awmod 142E 0 CODE 0 text7 dist/default/production\PIC_Capture.X.production.obj
+___ftdiv 8C 0 CODE 0 text15 dist/default/production\PIC_Capture.X.production.obj
+___ftmul 1970 0 CODE 0 text14 dist/default/production\PIC_Capture.X.production.obj
+___fttol 1726 0 CODE 0 text13 dist/default/production\PIC_Capture.X.production.obj
+___lwdiv 1330 0 CODE 0 text18 dist/default/production\PIC_Capture.X.production.obj
+__pmaintext C38 0 CODE 0 maintext dist/default/production\PIC_Capture.X.production.obj
+___lmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__size_of_delay_1 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__size_of_delay_2 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__end_of_transmit_command 1230 0 CODE 0 text10 dist/default/production\PIC_Capture.X.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+?___ftpack 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__Hinittext 0 0 ABS 0 inittext -
+___wmul@multiplier 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+_transmit_data 1186 0 CODE 0 text4 dist/default/production\PIC_Capture.X.production.obj
+transmit_data@data 75 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+__size_of_transmit_command 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+main@delay C3 0 BANK1 1 cstackBANK1 dist/default/production\PIC_Capture.X.production.obj
+___lwdiv@divisor 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+ste2007_display_driver@num_109 5B 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__end_of_output_character_array 12D2 0 CODE 0 text2 dist/default/production\PIC_Capture.X.production.obj
+stackhi 0 0 ABS 0 - C:\Users\Pz\AppData\Local\Temp\sno.obj
+stacklo 0 0 ABS 0 - C:\Users\Pz\AppData\Local\Temp\sno.obj
+?___lltoft 25 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__end_of__stringtab 224 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+?_T_computing 2C 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+___ftmul@cntr 48 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__pbssCOMMON 78 0 COMMON 1 bssCOMMON dist/default/production\PIC_Capture.X.production.obj
+___ftmul@sign 49 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+init_fetch0 1164 0 CODE 0 inittext dist/default/production\PIC_Capture.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+_PIR1bits C 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__Lend_init 24 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 84 0 CODE 0 cinit dist/default/production\PIC_Capture.X.production.obj
+__Hintentry 24 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+___awdiv@quotient 23 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+?___awdiv 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+?___awmod 25 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___lwdiv@dividend 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+?___ftdiv 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+?___ftmul 3A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+?___fttol 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+?___lwdiv 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__size_of_T_computing 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+output_character_array@array 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___awmod@dividend 27 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__size_of_Page_and_Column_adress_set 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+___lltoft@exp 29 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__ptext1 1CD2 0 CODE 0 text1 dist/default/production\PIC_Capture.X.production.obj
+__ptext2 127E 0 CODE 0 text2 dist/default/production\PIC_Capture.X.production.obj
+__ptext3 1B16 0 CODE 0 text3 dist/default/production\PIC_Capture.X.production.obj
+__ptext4 1186 0 CODE 0 text4 dist/default/production\PIC_Capture.X.production.obj
+__ptext5 1230 0 CODE 0 text5 dist/default/production\PIC_Capture.X.production.obj
+__ptext6 1146 0 CODE 0 text6 dist/default/production\PIC_Capture.X.production.obj
+__ptext7 142E 0 CODE 0 text7 dist/default/production\PIC_Capture.X.production.obj
+__ptext8 14C8 0 CODE 0 text8 dist/default/production\PIC_Capture.X.production.obj
+__ptext9 F9A 0 CODE 0 text9 dist/default/production\PIC_Capture.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__pstringtext 200 0 STRCODE 0 stringtext dist/default/production\PIC_Capture.X.production.obj
+__end_of_delay_1 1164 0 CODE 0 text6 dist/default/production\PIC_Capture.X.production.obj
+__end_of_delay_2 1146 0 CODE 0 text11 dist/default/production\PIC_Capture.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+___ftmul@exp 44 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__end_of__initialization 84 0 CODE 0 cinit dist/default/production\PIC_Capture.X.production.obj
+___awmod@divisor 25 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+__size_of_transmit_data 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__pidataBANK0 111A 0 CODE 0 idataBANK0 dist/default/production\PIC_Capture.X.production.obj
+__pidataBANK1 11B8 0 CODE 0 idataBANK1 dist/default/production\PIC_Capture.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext -
+Page_and_Column_adress_set@c0 25 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+Page_and_Column_adress_set@c1 26 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___ftpack@sign 24 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___lmul@product 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+_Page_and_Column_adress_set F9A 0 CODE 0 text9 dist/default/production\PIC_Capture.X.production.obj
+___lmul@multiplicand 24 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__size_of_ste2007_display_driver 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_Capture.X.production.obj
+___ftdiv@cntr 34 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+___ftdiv@sign 39 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__Hend_init 2A 0 CODE 0 end_init -
+init_ram0 116C 0 CODE 0 inittext dist/default/production\PIC_Capture.X.production.obj
+__end_of_main F9A 0 CODE 0 maintext dist/default/production\PIC_Capture.X.production.obj
+_CCPR1 15 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_PORTB 6 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_TRISB 86 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__end_of_transmit_data 11B8 0 CODE 0 text4 dist/default/production\PIC_Capture.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production\PIC_Capture.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+_CCP1CON 17 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production\PIC_Capture.X.production.obj
+___fttol@sign1 24 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__initialization 2A 0 CODE 0 cinit dist/default/production\PIC_Capture.X.production.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+__pbssBANK0 60 0 BANK0 1 bssBANK0 dist/default/production\PIC_Capture.X.production.obj
+__pbssBANK1 BC 0 BANK1 1 bssBANK1 dist/default/production\PIC_Capture.X.production.obj
+__Hstringtext 0 0 ABS 0 stringtext -
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+___wmul@product 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+_Display_symbol 1B16 0 CODE 0 text3 dist/default/production\PIC_Capture.X.production.obj
+__size_of_output_character_array 0 0 ABS 0 - dist/default/production\PIC_Capture.X.production.obj
+___ftmul@f3_as_product 45 0 BANK0 1 cstackBANK0 dist/default/production\PIC_Capture.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text1 0 E69 1CD2 197 2
+text2 0 93F 127E 2A 2
+text3 0 D8B 1B16 DE 2
+text4 0 8C3 1186 19 2
+text5 0 918 1230 27 2
+text6 0 8A3 1146 F 2
+text7 0 A17 142E 4D 2
+text8 0 A64 14C8 5B 2
+text10 0 8F8 11F0 20 2
+text11 0 894 1128 F 2
+text12 0 969 12D2 2F 2
+text13 0 B93 1726 8E 2
+text14 0 CB8 1970 D3 2
+text16 0 B25 164A 6E 2
+text17 0 ABF 157E 66 2
+text18 0 998 1330 3E 2
+text19 0 9D6 13AC 41 2
+text20 0 C21 1842 97 2
+maintext 0 61C C38 1E2 2
+cstackCOMMON 1 70 70 A 1
+cstackBANK0 1 20 20 4E 1
+inittext 0 8B2 1164 11 2
+intentry 0 4 8 FA 2
+reset_vec 0 0 0 3 2
+stringtext 0 100 200 51C 2
+idataBANK0 0 88D 111A 7 2
+idataBANK1 0 8DC 11B8 1C 2
+dataBANK1 1 A0 A0 27 1
+config 0 2007 400E 1 2

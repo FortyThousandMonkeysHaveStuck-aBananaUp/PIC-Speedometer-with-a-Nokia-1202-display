@@ -1,0 +1,3911 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"85 Nokia_display_driver/../Nokia_display_driver/STE2007_nokia_1202_display.h
+[c E1 0 1 2 3 4 5 .. ]
+[n E1 . display_initialization clear_all permanent_caption_display temperature_displaying LCD_Full speed_displaying  ]
+"78
+[s S1 `E1 1 `uc -> 2 `i `ui 1 `i 1 ]
+[n S1 display_dc word data delay speed ]
+"220 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic16f876a.h
+[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S9 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"219
+[u S8 `S9 1 ]
+[n S8 . . ]
+"231
+[v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
+[; ;STE2007_nokia_1202_display.h: 69: typedef enum{
+[; ;STE2007_nokia_1202_display.h: 70: display_initialization,
+[; ;STE2007_nokia_1202_display.h: 71: clear_all,
+[; ;STE2007_nokia_1202_display.h: 72: permanent_caption_display,
+[; ;STE2007_nokia_1202_display.h: 73: temperature_displaying,
+[; ;STE2007_nokia_1202_display.h: 74: LCD_Full,
+[; ;STE2007_nokia_1202_display.h: 75: speed_displaying
+[; ;STE2007_nokia_1202_display.h: 76: }command_word;
+[; ;STE2007_nokia_1202_display.h: 78: struct display_dc{
+[; ;STE2007_nokia_1202_display.h: 79: command_word word;
+[; ;STE2007_nokia_1202_display.h: 80: char data[2];
+[; ;STE2007_nokia_1202_display.h: 81: unsigned int delay;
+[; ;STE2007_nokia_1202_display.h: 82: int speed;
+[; ;STE2007_nokia_1202_display.h: 83: };
+"85 Nokia_display_driver/../Nokia_display_driver/STE2007_nokia_1202_display.h
+[v _dis `S1 ~T0 @X0 1 e ]
+[; ;STE2007_nokia_1202_display.h: 85: struct display_dc dis;
+[; ;STE2007_nokia_1202_display.h: 87: void ste2007_display_driver(struct display_dc d);
+[; ;STE2007_nokia_1202_display.h: 88: void transmit_command(char command);
+[; ;STE2007_nokia_1202_display.h: 89: void transmit_data(char data);
+[; ;STE2007_nokia_1202_display.h: 90: void Page_and_Column_adress_set(unsigned char Page, unsigned char Column);
+[; ;STE2007_nokia_1202_display.h: 91: void Display_symbol(char char_0);
+[; ;STE2007_nokia_1202_display.h: 92: void output_character_array(char array[]);
+[; ;STE2007_nokia_1202_display.h: 93: void delay_1(void);
+[; ;STE2007_nokia_1202_display.h: 94: void delay_2(void);
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;pic16f876a.h: 50: extern volatile unsigned char INDF @ 0x000;
+"52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic16f876a.h
+[; ;pic16f876a.h: 52: asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+[; ;pic16f876a.h: 57: extern volatile unsigned char TMR0 @ 0x001;
+"59
+[; ;pic16f876a.h: 59: asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+[; ;pic16f876a.h: 64: extern volatile unsigned char PCL @ 0x002;
+"66
+[; ;pic16f876a.h: 66: asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+[; ;pic16f876a.h: 71: extern volatile unsigned char STATUS @ 0x003;
+"73
+[; ;pic16f876a.h: 73: asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+[; ;pic16f876a.h: 76: typedef union {
+[; ;pic16f876a.h: 77: struct {
+[; ;pic16f876a.h: 78: unsigned C :1;
+[; ;pic16f876a.h: 79: unsigned DC :1;
+[; ;pic16f876a.h: 80: unsigned Z :1;
+[; ;pic16f876a.h: 81: unsigned nPD :1;
+[; ;pic16f876a.h: 82: unsigned nTO :1;
+[; ;pic16f876a.h: 83: unsigned RP :2;
+[; ;pic16f876a.h: 84: unsigned IRP :1;
+[; ;pic16f876a.h: 85: };
+[; ;pic16f876a.h: 86: struct {
+[; ;pic16f876a.h: 87: unsigned :5;
+[; ;pic16f876a.h: 88: unsigned RP0 :1;
+[; ;pic16f876a.h: 89: unsigned RP1 :1;
+[; ;pic16f876a.h: 90: };
+[; ;pic16f876a.h: 91: struct {
+[; ;pic16f876a.h: 92: unsigned CARRY :1;
+[; ;pic16f876a.h: 93: unsigned :1;
+[; ;pic16f876a.h: 94: unsigned ZERO :1;
+[; ;pic16f876a.h: 95: };
+[; ;pic16f876a.h: 96: } STATUSbits_t;
+[; ;pic16f876a.h: 97: extern volatile STATUSbits_t STATUSbits @ 0x003;
+[; ;pic16f876a.h: 157: extern volatile unsigned char FSR @ 0x004;
+"159
+[; ;pic16f876a.h: 159: asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+[; ;pic16f876a.h: 164: extern volatile unsigned char PORTA @ 0x005;
+"166
+[; ;pic16f876a.h: 166: asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+[; ;pic16f876a.h: 169: typedef union {
+[; ;pic16f876a.h: 170: struct {
+[; ;pic16f876a.h: 171: unsigned RA0 :1;
+[; ;pic16f876a.h: 172: unsigned RA1 :1;
+[; ;pic16f876a.h: 173: unsigned RA2 :1;
+[; ;pic16f876a.h: 174: unsigned RA3 :1;
+[; ;pic16f876a.h: 175: unsigned RA4 :1;
+[; ;pic16f876a.h: 176: unsigned RA5 :1;
+[; ;pic16f876a.h: 177: };
+[; ;pic16f876a.h: 178: } PORTAbits_t;
+[; ;pic16f876a.h: 179: extern volatile PORTAbits_t PORTAbits @ 0x005;
+[; ;pic16f876a.h: 214: extern volatile unsigned char PORTB @ 0x006;
+"216
+[; ;pic16f876a.h: 216: asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+[; ;pic16f876a.h: 219: typedef union {
+[; ;pic16f876a.h: 220: struct {
+[; ;pic16f876a.h: 221: unsigned RB0 :1;
+[; ;pic16f876a.h: 222: unsigned RB1 :1;
+[; ;pic16f876a.h: 223: unsigned RB2 :1;
+[; ;pic16f876a.h: 224: unsigned RB3 :1;
+[; ;pic16f876a.h: 225: unsigned RB4 :1;
+[; ;pic16f876a.h: 226: unsigned RB5 :1;
+[; ;pic16f876a.h: 227: unsigned RB6 :1;
+[; ;pic16f876a.h: 228: unsigned RB7 :1;
+[; ;pic16f876a.h: 229: };
+[; ;pic16f876a.h: 230: } PORTBbits_t;
+[; ;pic16f876a.h: 231: extern volatile PORTBbits_t PORTBbits @ 0x006;
+[; ;pic16f876a.h: 276: extern volatile unsigned char PORTC @ 0x007;
+"278
+[; ;pic16f876a.h: 278: asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+[; ;pic16f876a.h: 281: typedef union {
+[; ;pic16f876a.h: 282: struct {
+[; ;pic16f876a.h: 283: unsigned RC0 :1;
+[; ;pic16f876a.h: 284: unsigned RC1 :1;
+[; ;pic16f876a.h: 285: unsigned RC2 :1;
+[; ;pic16f876a.h: 286: unsigned RC3 :1;
+[; ;pic16f876a.h: 287: unsigned RC4 :1;
+[; ;pic16f876a.h: 288: unsigned RC5 :1;
+[; ;pic16f876a.h: 289: unsigned RC6 :1;
+[; ;pic16f876a.h: 290: unsigned RC7 :1;
+[; ;pic16f876a.h: 291: };
+[; ;pic16f876a.h: 292: } PORTCbits_t;
+[; ;pic16f876a.h: 293: extern volatile PORTCbits_t PORTCbits @ 0x007;
+[; ;pic16f876a.h: 338: extern volatile unsigned char PCLATH @ 0x00A;
+"340
+[; ;pic16f876a.h: 340: asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+[; ;pic16f876a.h: 343: typedef union {
+[; ;pic16f876a.h: 344: struct {
+[; ;pic16f876a.h: 345: unsigned PCLATH :5;
+[; ;pic16f876a.h: 346: };
+[; ;pic16f876a.h: 347: } PCLATHbits_t;
+[; ;pic16f876a.h: 348: extern volatile PCLATHbits_t PCLATHbits @ 0x00A;
+[; ;pic16f876a.h: 358: extern volatile unsigned char INTCON @ 0x00B;
+"360
+[; ;pic16f876a.h: 360: asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+[; ;pic16f876a.h: 363: typedef union {
+[; ;pic16f876a.h: 364: struct {
+[; ;pic16f876a.h: 365: unsigned RBIF :1;
+[; ;pic16f876a.h: 366: unsigned INTF :1;
+[; ;pic16f876a.h: 367: unsigned TMR0IF :1;
+[; ;pic16f876a.h: 368: unsigned RBIE :1;
+[; ;pic16f876a.h: 369: unsigned INTE :1;
+[; ;pic16f876a.h: 370: unsigned TMR0IE :1;
+[; ;pic16f876a.h: 371: unsigned PEIE :1;
+[; ;pic16f876a.h: 372: unsigned GIE :1;
+[; ;pic16f876a.h: 373: };
+[; ;pic16f876a.h: 374: struct {
+[; ;pic16f876a.h: 375: unsigned :2;
+[; ;pic16f876a.h: 376: unsigned T0IF :1;
+[; ;pic16f876a.h: 377: unsigned :2;
+[; ;pic16f876a.h: 378: unsigned T0IE :1;
+[; ;pic16f876a.h: 379: };
+[; ;pic16f876a.h: 380: } INTCONbits_t;
+[; ;pic16f876a.h: 381: extern volatile INTCONbits_t INTCONbits @ 0x00B;
+[; ;pic16f876a.h: 436: extern volatile unsigned char PIR1 @ 0x00C;
+"438
+[; ;pic16f876a.h: 438: asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+[; ;pic16f876a.h: 441: typedef union {
+[; ;pic16f876a.h: 442: struct {
+[; ;pic16f876a.h: 443: unsigned TMR1IF :1;
+[; ;pic16f876a.h: 444: unsigned TMR2IF :1;
+[; ;pic16f876a.h: 445: unsigned CCP1IF :1;
+[; ;pic16f876a.h: 446: unsigned SSPIF :1;
+[; ;pic16f876a.h: 447: unsigned TXIF :1;
+[; ;pic16f876a.h: 448: unsigned RCIF :1;
+[; ;pic16f876a.h: 449: unsigned ADIF :1;
+[; ;pic16f876a.h: 450: };
+[; ;pic16f876a.h: 451: } PIR1bits_t;
+[; ;pic16f876a.h: 452: extern volatile PIR1bits_t PIR1bits @ 0x00C;
+[; ;pic16f876a.h: 492: extern volatile unsigned char PIR2 @ 0x00D;
+"494
+[; ;pic16f876a.h: 494: asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+[; ;pic16f876a.h: 497: typedef union {
+[; ;pic16f876a.h: 498: struct {
+[; ;pic16f876a.h: 499: unsigned CCP2IF :1;
+[; ;pic16f876a.h: 500: unsigned :2;
+[; ;pic16f876a.h: 501: unsigned BCLIF :1;
+[; ;pic16f876a.h: 502: unsigned EEIF :1;
+[; ;pic16f876a.h: 503: unsigned :1;
+[; ;pic16f876a.h: 504: unsigned CMIF :1;
+[; ;pic16f876a.h: 505: };
+[; ;pic16f876a.h: 506: } PIR2bits_t;
+[; ;pic16f876a.h: 507: extern volatile PIR2bits_t PIR2bits @ 0x00D;
+[; ;pic16f876a.h: 532: extern volatile unsigned short TMR1 @ 0x00E;
+"534
+[; ;pic16f876a.h: 534: asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+[; ;pic16f876a.h: 539: extern volatile unsigned char TMR1L @ 0x00E;
+"541
+[; ;pic16f876a.h: 541: asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+[; ;pic16f876a.h: 546: extern volatile unsigned char TMR1H @ 0x00F;
+"548
+[; ;pic16f876a.h: 548: asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+[; ;pic16f876a.h: 553: extern volatile unsigned char T1CON @ 0x010;
+"555
+[; ;pic16f876a.h: 555: asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+[; ;pic16f876a.h: 558: typedef union {
+[; ;pic16f876a.h: 559: struct {
+[; ;pic16f876a.h: 560: unsigned TMR1ON :1;
+[; ;pic16f876a.h: 561: unsigned TMR1CS :1;
+[; ;pic16f876a.h: 562: unsigned nT1SYNC :1;
+[; ;pic16f876a.h: 563: unsigned T1OSCEN :1;
+[; ;pic16f876a.h: 564: unsigned T1CKPS :2;
+[; ;pic16f876a.h: 565: };
+[; ;pic16f876a.h: 566: struct {
+[; ;pic16f876a.h: 567: unsigned :2;
+[; ;pic16f876a.h: 568: unsigned T1SYNC :1;
+[; ;pic16f876a.h: 569: unsigned :1;
+[; ;pic16f876a.h: 570: unsigned T1CKPS0 :1;
+[; ;pic16f876a.h: 571: unsigned T1CKPS1 :1;
+[; ;pic16f876a.h: 572: };
+[; ;pic16f876a.h: 573: struct {
+[; ;pic16f876a.h: 574: unsigned :2;
+[; ;pic16f876a.h: 575: unsigned T1INSYNC :1;
+[; ;pic16f876a.h: 576: };
+[; ;pic16f876a.h: 577: } T1CONbits_t;
+[; ;pic16f876a.h: 578: extern volatile T1CONbits_t T1CONbits @ 0x010;
+[; ;pic16f876a.h: 628: extern volatile unsigned char TMR2 @ 0x011;
+"630
+[; ;pic16f876a.h: 630: asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+[; ;pic16f876a.h: 635: extern volatile unsigned char T2CON @ 0x012;
+"637
+[; ;pic16f876a.h: 637: asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+[; ;pic16f876a.h: 640: typedef union {
+[; ;pic16f876a.h: 641: struct {
+[; ;pic16f876a.h: 642: unsigned T2CKPS :2;
+[; ;pic16f876a.h: 643: unsigned TMR2ON :1;
+[; ;pic16f876a.h: 644: unsigned TOUTPS :4;
+[; ;pic16f876a.h: 645: };
+[; ;pic16f876a.h: 646: struct {
+[; ;pic16f876a.h: 647: unsigned T2CKPS0 :1;
+[; ;pic16f876a.h: 648: unsigned T2CKPS1 :1;
+[; ;pic16f876a.h: 649: unsigned :1;
+[; ;pic16f876a.h: 650: unsigned TOUTPS0 :1;
+[; ;pic16f876a.h: 651: unsigned TOUTPS1 :1;
+[; ;pic16f876a.h: 652: unsigned TOUTPS2 :1;
+[; ;pic16f876a.h: 653: unsigned TOUTPS3 :1;
+[; ;pic16f876a.h: 654: };
+[; ;pic16f876a.h: 655: } T2CONbits_t;
+[; ;pic16f876a.h: 656: extern volatile T2CONbits_t T2CONbits @ 0x012;
+[; ;pic16f876a.h: 706: extern volatile unsigned char SSPBUF @ 0x013;
+"708
+[; ;pic16f876a.h: 708: asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+[; ;pic16f876a.h: 713: extern volatile unsigned char SSPCON @ 0x014;
+"715
+[; ;pic16f876a.h: 715: asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+[; ;pic16f876a.h: 718: typedef union {
+[; ;pic16f876a.h: 719: struct {
+[; ;pic16f876a.h: 720: unsigned SSPM :4;
+[; ;pic16f876a.h: 721: unsigned CKP :1;
+[; ;pic16f876a.h: 722: unsigned SSPEN :1;
+[; ;pic16f876a.h: 723: unsigned SSPOV :1;
+[; ;pic16f876a.h: 724: unsigned WCOL :1;
+[; ;pic16f876a.h: 725: };
+[; ;pic16f876a.h: 726: struct {
+[; ;pic16f876a.h: 727: unsigned SSPM0 :1;
+[; ;pic16f876a.h: 728: unsigned SSPM1 :1;
+[; ;pic16f876a.h: 729: unsigned SSPM2 :1;
+[; ;pic16f876a.h: 730: unsigned SSPM3 :1;
+[; ;pic16f876a.h: 731: };
+[; ;pic16f876a.h: 732: } SSPCONbits_t;
+[; ;pic16f876a.h: 733: extern volatile SSPCONbits_t SSPCONbits @ 0x014;
+[; ;pic16f876a.h: 783: extern volatile unsigned short CCPR1 @ 0x015;
+"785
+[; ;pic16f876a.h: 785: asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+[; ;pic16f876a.h: 790: extern volatile unsigned char CCPR1L @ 0x015;
+"792
+[; ;pic16f876a.h: 792: asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+[; ;pic16f876a.h: 797: extern volatile unsigned char CCPR1H @ 0x016;
+"799
+[; ;pic16f876a.h: 799: asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+[; ;pic16f876a.h: 804: extern volatile unsigned char CCP1CON @ 0x017;
+"806
+[; ;pic16f876a.h: 806: asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+[; ;pic16f876a.h: 809: typedef union {
+[; ;pic16f876a.h: 810: struct {
+[; ;pic16f876a.h: 811: unsigned CCP1M :4;
+[; ;pic16f876a.h: 812: unsigned CCP1Y :1;
+[; ;pic16f876a.h: 813: unsigned CCP1X :1;
+[; ;pic16f876a.h: 814: };
+[; ;pic16f876a.h: 815: struct {
+[; ;pic16f876a.h: 816: unsigned CCP1M0 :1;
+[; ;pic16f876a.h: 817: unsigned CCP1M1 :1;
+[; ;pic16f876a.h: 818: unsigned CCP1M2 :1;
+[; ;pic16f876a.h: 819: unsigned CCP1M3 :1;
+[; ;pic16f876a.h: 820: };
+[; ;pic16f876a.h: 821: } CCP1CONbits_t;
+[; ;pic16f876a.h: 822: extern volatile CCP1CONbits_t CCP1CONbits @ 0x017;
+[; ;pic16f876a.h: 862: extern volatile unsigned char RCSTA @ 0x018;
+"864
+[; ;pic16f876a.h: 864: asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+[; ;pic16f876a.h: 867: typedef union {
+[; ;pic16f876a.h: 868: struct {
+[; ;pic16f876a.h: 869: unsigned RX9D :1;
+[; ;pic16f876a.h: 870: unsigned OERR :1;
+[; ;pic16f876a.h: 871: unsigned FERR :1;
+[; ;pic16f876a.h: 872: unsigned ADDEN :1;
+[; ;pic16f876a.h: 873: unsigned CREN :1;
+[; ;pic16f876a.h: 874: unsigned SREN :1;
+[; ;pic16f876a.h: 875: unsigned RX9 :1;
+[; ;pic16f876a.h: 876: unsigned SPEN :1;
+[; ;pic16f876a.h: 877: };
+[; ;pic16f876a.h: 878: struct {
+[; ;pic16f876a.h: 879: unsigned RCD8 :1;
+[; ;pic16f876a.h: 880: unsigned :5;
+[; ;pic16f876a.h: 881: unsigned RC9 :1;
+[; ;pic16f876a.h: 882: };
+[; ;pic16f876a.h: 883: struct {
+[; ;pic16f876a.h: 884: unsigned :6;
+[; ;pic16f876a.h: 885: unsigned nRC8 :1;
+[; ;pic16f876a.h: 886: };
+[; ;pic16f876a.h: 887: struct {
+[; ;pic16f876a.h: 888: unsigned :6;
+[; ;pic16f876a.h: 889: unsigned RC8_9 :1;
+[; ;pic16f876a.h: 890: };
+[; ;pic16f876a.h: 891: } RCSTAbits_t;
+[; ;pic16f876a.h: 892: extern volatile RCSTAbits_t RCSTAbits @ 0x018;
+[; ;pic16f876a.h: 957: extern volatile unsigned char TXREG @ 0x019;
+"959
+[; ;pic16f876a.h: 959: asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+[; ;pic16f876a.h: 964: extern volatile unsigned char RCREG @ 0x01A;
+"966
+[; ;pic16f876a.h: 966: asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+[; ;pic16f876a.h: 971: extern volatile unsigned short CCPR2 @ 0x01B;
+"973
+[; ;pic16f876a.h: 973: asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+[; ;pic16f876a.h: 978: extern volatile unsigned char CCPR2L @ 0x01B;
+"980
+[; ;pic16f876a.h: 980: asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+[; ;pic16f876a.h: 985: extern volatile unsigned char CCPR2H @ 0x01C;
+"987
+[; ;pic16f876a.h: 987: asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+[; ;pic16f876a.h: 992: extern volatile unsigned char CCP2CON @ 0x01D;
+"994
+[; ;pic16f876a.h: 994: asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+[; ;pic16f876a.h: 997: typedef union {
+[; ;pic16f876a.h: 998: struct {
+[; ;pic16f876a.h: 999: unsigned CCP2M :4;
+[; ;pic16f876a.h: 1000: unsigned CCP2Y :1;
+[; ;pic16f876a.h: 1001: unsigned CCP2X :1;
+[; ;pic16f876a.h: 1002: };
+[; ;pic16f876a.h: 1003: struct {
+[; ;pic16f876a.h: 1004: unsigned CCP2M0 :1;
+[; ;pic16f876a.h: 1005: unsigned CCP2M1 :1;
+[; ;pic16f876a.h: 1006: unsigned CCP2M2 :1;
+[; ;pic16f876a.h: 1007: unsigned CCP2M3 :1;
+[; ;pic16f876a.h: 1008: };
+[; ;pic16f876a.h: 1009: } CCP2CONbits_t;
+[; ;pic16f876a.h: 1010: extern volatile CCP2CONbits_t CCP2CONbits @ 0x01D;
+[; ;pic16f876a.h: 1050: extern volatile unsigned char ADRESH @ 0x01E;
+"1052
+[; ;pic16f876a.h: 1052: asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+[; ;pic16f876a.h: 1057: extern volatile unsigned char ADCON0 @ 0x01F;
+"1059
+[; ;pic16f876a.h: 1059: asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+[; ;pic16f876a.h: 1062: typedef union {
+[; ;pic16f876a.h: 1063: struct {
+[; ;pic16f876a.h: 1064: unsigned ADON :1;
+[; ;pic16f876a.h: 1065: unsigned :1;
+[; ;pic16f876a.h: 1066: unsigned GO_nDONE :1;
+[; ;pic16f876a.h: 1067: unsigned CHS :3;
+[; ;pic16f876a.h: 1068: unsigned ADCS :2;
+[; ;pic16f876a.h: 1069: };
+[; ;pic16f876a.h: 1070: struct {
+[; ;pic16f876a.h: 1071: unsigned :2;
+[; ;pic16f876a.h: 1072: unsigned GO :1;
+[; ;pic16f876a.h: 1073: unsigned CHS0 :1;
+[; ;pic16f876a.h: 1074: unsigned CHS1 :1;
+[; ;pic16f876a.h: 1075: unsigned CHS2 :1;
+[; ;pic16f876a.h: 1076: unsigned ADCS0 :1;
+[; ;pic16f876a.h: 1077: unsigned ADCS1 :1;
+[; ;pic16f876a.h: 1078: };
+[; ;pic16f876a.h: 1079: struct {
+[; ;pic16f876a.h: 1080: unsigned :2;
+[; ;pic16f876a.h: 1081: unsigned nDONE :1;
+[; ;pic16f876a.h: 1082: };
+[; ;pic16f876a.h: 1083: struct {
+[; ;pic16f876a.h: 1084: unsigned :2;
+[; ;pic16f876a.h: 1085: unsigned GO_DONE :1;
+[; ;pic16f876a.h: 1086: };
+[; ;pic16f876a.h: 1087: } ADCON0bits_t;
+[; ;pic16f876a.h: 1088: extern volatile ADCON0bits_t ADCON0bits @ 0x01F;
+[; ;pic16f876a.h: 1153: extern volatile unsigned char OPTION_REG @ 0x081;
+"1155
+[; ;pic16f876a.h: 1155: asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+[; ;pic16f876a.h: 1158: typedef union {
+[; ;pic16f876a.h: 1159: struct {
+[; ;pic16f876a.h: 1160: unsigned PS :3;
+[; ;pic16f876a.h: 1161: unsigned PSA :1;
+[; ;pic16f876a.h: 1162: unsigned T0SE :1;
+[; ;pic16f876a.h: 1163: unsigned T0CS :1;
+[; ;pic16f876a.h: 1164: unsigned INTEDG :1;
+[; ;pic16f876a.h: 1165: unsigned nRBPU :1;
+[; ;pic16f876a.h: 1166: };
+[; ;pic16f876a.h: 1167: struct {
+[; ;pic16f876a.h: 1168: unsigned PS0 :1;
+[; ;pic16f876a.h: 1169: unsigned PS1 :1;
+[; ;pic16f876a.h: 1170: unsigned PS2 :1;
+[; ;pic16f876a.h: 1171: };
+[; ;pic16f876a.h: 1172: } OPTION_REGbits_t;
+[; ;pic16f876a.h: 1173: extern volatile OPTION_REGbits_t OPTION_REGbits @ 0x081;
+[; ;pic16f876a.h: 1223: extern volatile unsigned char TRISA @ 0x085;
+"1225
+[; ;pic16f876a.h: 1225: asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+[; ;pic16f876a.h: 1228: typedef union {
+[; ;pic16f876a.h: 1229: struct {
+[; ;pic16f876a.h: 1230: unsigned TRISA0 :1;
+[; ;pic16f876a.h: 1231: unsigned TRISA1 :1;
+[; ;pic16f876a.h: 1232: unsigned TRISA2 :1;
+[; ;pic16f876a.h: 1233: unsigned TRISA3 :1;
+[; ;pic16f876a.h: 1234: unsigned TRISA4 :1;
+[; ;pic16f876a.h: 1235: unsigned TRISA5 :1;
+[; ;pic16f876a.h: 1236: };
+[; ;pic16f876a.h: 1237: } TRISAbits_t;
+[; ;pic16f876a.h: 1238: extern volatile TRISAbits_t TRISAbits @ 0x085;
+[; ;pic16f876a.h: 1273: extern volatile unsigned char TRISB @ 0x086;
+"1275
+[; ;pic16f876a.h: 1275: asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+[; ;pic16f876a.h: 1278: typedef union {
+[; ;pic16f876a.h: 1279: struct {
+[; ;pic16f876a.h: 1280: unsigned TRISB0 :1;
+[; ;pic16f876a.h: 1281: unsigned TRISB1 :1;
+[; ;pic16f876a.h: 1282: unsigned TRISB2 :1;
+[; ;pic16f876a.h: 1283: unsigned TRISB3 :1;
+[; ;pic16f876a.h: 1284: unsigned TRISB4 :1;
+[; ;pic16f876a.h: 1285: unsigned TRISB5 :1;
+[; ;pic16f876a.h: 1286: unsigned TRISB6 :1;
+[; ;pic16f876a.h: 1287: unsigned TRISB7 :1;
+[; ;pic16f876a.h: 1288: };
+[; ;pic16f876a.h: 1289: } TRISBbits_t;
+[; ;pic16f876a.h: 1290: extern volatile TRISBbits_t TRISBbits @ 0x086;
+[; ;pic16f876a.h: 1335: extern volatile unsigned char TRISC @ 0x087;
+"1337
+[; ;pic16f876a.h: 1337: asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+[; ;pic16f876a.h: 1340: typedef union {
+[; ;pic16f876a.h: 1341: struct {
+[; ;pic16f876a.h: 1342: unsigned TRISC0 :1;
+[; ;pic16f876a.h: 1343: unsigned TRISC1 :1;
+[; ;pic16f876a.h: 1344: unsigned TRISC2 :1;
+[; ;pic16f876a.h: 1345: unsigned TRISC3 :1;
+[; ;pic16f876a.h: 1346: unsigned TRISC4 :1;
+[; ;pic16f876a.h: 1347: unsigned TRISC5 :1;
+[; ;pic16f876a.h: 1348: unsigned TRISC6 :1;
+[; ;pic16f876a.h: 1349: unsigned TRISC7 :1;
+[; ;pic16f876a.h: 1350: };
+[; ;pic16f876a.h: 1351: } TRISCbits_t;
+[; ;pic16f876a.h: 1352: extern volatile TRISCbits_t TRISCbits @ 0x087;
+[; ;pic16f876a.h: 1397: extern volatile unsigned char PIE1 @ 0x08C;
+"1399
+[; ;pic16f876a.h: 1399: asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+[; ;pic16f876a.h: 1402: typedef union {
+[; ;pic16f876a.h: 1403: struct {
+[; ;pic16f876a.h: 1404: unsigned TMR1IE :1;
+[; ;pic16f876a.h: 1405: unsigned TMR2IE :1;
+[; ;pic16f876a.h: 1406: unsigned CCP1IE :1;
+[; ;pic16f876a.h: 1407: unsigned SSPIE :1;
+[; ;pic16f876a.h: 1408: unsigned TXIE :1;
+[; ;pic16f876a.h: 1409: unsigned RCIE :1;
+[; ;pic16f876a.h: 1410: unsigned ADIE :1;
+[; ;pic16f876a.h: 1411: };
+[; ;pic16f876a.h: 1412: } PIE1bits_t;
+[; ;pic16f876a.h: 1413: extern volatile PIE1bits_t PIE1bits @ 0x08C;
+[; ;pic16f876a.h: 1453: extern volatile unsigned char PIE2 @ 0x08D;
+"1455
+[; ;pic16f876a.h: 1455: asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+[; ;pic16f876a.h: 1458: typedef union {
+[; ;pic16f876a.h: 1459: struct {
+[; ;pic16f876a.h: 1460: unsigned CCP2IE :1;
+[; ;pic16f876a.h: 1461: unsigned :2;
+[; ;pic16f876a.h: 1462: unsigned BCLIE :1;
+[; ;pic16f876a.h: 1463: unsigned EEIE :1;
+[; ;pic16f876a.h: 1464: unsigned :1;
+[; ;pic16f876a.h: 1465: unsigned CMIE :1;
+[; ;pic16f876a.h: 1466: };
+[; ;pic16f876a.h: 1467: } PIE2bits_t;
+[; ;pic16f876a.h: 1468: extern volatile PIE2bits_t PIE2bits @ 0x08D;
+[; ;pic16f876a.h: 1493: extern volatile unsigned char PCON @ 0x08E;
+"1495
+[; ;pic16f876a.h: 1495: asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+[; ;pic16f876a.h: 1498: typedef union {
+[; ;pic16f876a.h: 1499: struct {
+[; ;pic16f876a.h: 1500: unsigned nBOR :1;
+[; ;pic16f876a.h: 1501: unsigned nPOR :1;
+[; ;pic16f876a.h: 1502: };
+[; ;pic16f876a.h: 1503: struct {
+[; ;pic16f876a.h: 1504: unsigned nBO :1;
+[; ;pic16f876a.h: 1505: };
+[; ;pic16f876a.h: 1506: } PCONbits_t;
+[; ;pic16f876a.h: 1507: extern volatile PCONbits_t PCONbits @ 0x08E;
+[; ;pic16f876a.h: 1527: extern volatile unsigned char SSPCON2 @ 0x091;
+"1529
+[; ;pic16f876a.h: 1529: asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+[; ;pic16f876a.h: 1532: typedef union {
+[; ;pic16f876a.h: 1533: struct {
+[; ;pic16f876a.h: 1534: unsigned SEN :1;
+[; ;pic16f876a.h: 1535: unsigned RSEN :1;
+[; ;pic16f876a.h: 1536: unsigned PEN :1;
+[; ;pic16f876a.h: 1537: unsigned RCEN :1;
+[; ;pic16f876a.h: 1538: unsigned ACKEN :1;
+[; ;pic16f876a.h: 1539: unsigned ACKDT :1;
+[; ;pic16f876a.h: 1540: unsigned ACKSTAT :1;
+[; ;pic16f876a.h: 1541: unsigned GCEN :1;
+[; ;pic16f876a.h: 1542: };
+[; ;pic16f876a.h: 1543: } SSPCON2bits_t;
+[; ;pic16f876a.h: 1544: extern volatile SSPCON2bits_t SSPCON2bits @ 0x091;
+[; ;pic16f876a.h: 1589: extern volatile unsigned char PR2 @ 0x092;
+"1591
+[; ;pic16f876a.h: 1591: asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+[; ;pic16f876a.h: 1596: extern volatile unsigned char SSPADD @ 0x093;
+"1598
+[; ;pic16f876a.h: 1598: asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+[; ;pic16f876a.h: 1603: extern volatile unsigned char SSPSTAT @ 0x094;
+"1605
+[; ;pic16f876a.h: 1605: asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+[; ;pic16f876a.h: 1608: typedef union {
+[; ;pic16f876a.h: 1609: struct {
+[; ;pic16f876a.h: 1610: unsigned BF :1;
+[; ;pic16f876a.h: 1611: unsigned UA :1;
+[; ;pic16f876a.h: 1612: unsigned R_nW :1;
+[; ;pic16f876a.h: 1613: unsigned S :1;
+[; ;pic16f876a.h: 1614: unsigned P :1;
+[; ;pic16f876a.h: 1615: unsigned D_nA :1;
+[; ;pic16f876a.h: 1616: unsigned CKE :1;
+[; ;pic16f876a.h: 1617: unsigned SMP :1;
+[; ;pic16f876a.h: 1618: };
+[; ;pic16f876a.h: 1619: struct {
+[; ;pic16f876a.h: 1620: unsigned :2;
+[; ;pic16f876a.h: 1621: unsigned R :1;
+[; ;pic16f876a.h: 1622: unsigned :2;
+[; ;pic16f876a.h: 1623: unsigned D :1;
+[; ;pic16f876a.h: 1624: };
+[; ;pic16f876a.h: 1625: struct {
+[; ;pic16f876a.h: 1626: unsigned :2;
+[; ;pic16f876a.h: 1627: unsigned I2C_READ :1;
+[; ;pic16f876a.h: 1628: unsigned I2C_START :1;
+[; ;pic16f876a.h: 1629: unsigned I2C_STOP :1;
+[; ;pic16f876a.h: 1630: unsigned I2C_DATA :1;
+[; ;pic16f876a.h: 1631: };
+[; ;pic16f876a.h: 1632: struct {
+[; ;pic16f876a.h: 1633: unsigned :2;
+[; ;pic16f876a.h: 1634: unsigned nW :1;
+[; ;pic16f876a.h: 1635: unsigned :2;
+[; ;pic16f876a.h: 1636: unsigned nA :1;
+[; ;pic16f876a.h: 1637: };
+[; ;pic16f876a.h: 1638: struct {
+[; ;pic16f876a.h: 1639: unsigned :2;
+[; ;pic16f876a.h: 1640: unsigned nWRITE :1;
+[; ;pic16f876a.h: 1641: unsigned :2;
+[; ;pic16f876a.h: 1642: unsigned nADDRESS :1;
+[; ;pic16f876a.h: 1643: };
+[; ;pic16f876a.h: 1644: struct {
+[; ;pic16f876a.h: 1645: unsigned :2;
+[; ;pic16f876a.h: 1646: unsigned R_W :1;
+[; ;pic16f876a.h: 1647: unsigned :2;
+[; ;pic16f876a.h: 1648: unsigned D_A :1;
+[; ;pic16f876a.h: 1649: };
+[; ;pic16f876a.h: 1650: struct {
+[; ;pic16f876a.h: 1651: unsigned :2;
+[; ;pic16f876a.h: 1652: unsigned READ_WRITE :1;
+[; ;pic16f876a.h: 1653: unsigned :2;
+[; ;pic16f876a.h: 1654: unsigned DATA_ADDRESS :1;
+[; ;pic16f876a.h: 1655: };
+[; ;pic16f876a.h: 1656: } SSPSTATbits_t;
+[; ;pic16f876a.h: 1657: extern volatile SSPSTATbits_t SSPSTATbits @ 0x094;
+[; ;pic16f876a.h: 1772: extern volatile unsigned char TXSTA @ 0x098;
+"1774
+[; ;pic16f876a.h: 1774: asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+[; ;pic16f876a.h: 1777: typedef union {
+[; ;pic16f876a.h: 1778: struct {
+[; ;pic16f876a.h: 1779: unsigned TX9D :1;
+[; ;pic16f876a.h: 1780: unsigned TRMT :1;
+[; ;pic16f876a.h: 1781: unsigned BRGH :1;
+[; ;pic16f876a.h: 1782: unsigned :1;
+[; ;pic16f876a.h: 1783: unsigned SYNC :1;
+[; ;pic16f876a.h: 1784: unsigned TXEN :1;
+[; ;pic16f876a.h: 1785: unsigned TX9 :1;
+[; ;pic16f876a.h: 1786: unsigned CSRC :1;
+[; ;pic16f876a.h: 1787: };
+[; ;pic16f876a.h: 1788: struct {
+[; ;pic16f876a.h: 1789: unsigned TXD8 :1;
+[; ;pic16f876a.h: 1790: unsigned :5;
+[; ;pic16f876a.h: 1791: unsigned nTX8 :1;
+[; ;pic16f876a.h: 1792: };
+[; ;pic16f876a.h: 1793: struct {
+[; ;pic16f876a.h: 1794: unsigned :6;
+[; ;pic16f876a.h: 1795: unsigned TX8_9 :1;
+[; ;pic16f876a.h: 1796: };
+[; ;pic16f876a.h: 1797: } TXSTAbits_t;
+[; ;pic16f876a.h: 1798: extern volatile TXSTAbits_t TXSTAbits @ 0x098;
+[; ;pic16f876a.h: 1853: extern volatile unsigned char SPBRG @ 0x099;
+"1855
+[; ;pic16f876a.h: 1855: asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+[; ;pic16f876a.h: 1860: extern volatile unsigned char CMCON @ 0x09C;
+"1862
+[; ;pic16f876a.h: 1862: asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+[; ;pic16f876a.h: 1865: typedef union {
+[; ;pic16f876a.h: 1866: struct {
+[; ;pic16f876a.h: 1867: unsigned CM :3;
+[; ;pic16f876a.h: 1868: unsigned CIS :1;
+[; ;pic16f876a.h: 1869: unsigned C1INV :1;
+[; ;pic16f876a.h: 1870: unsigned C2INV :1;
+[; ;pic16f876a.h: 1871: unsigned C1OUT :1;
+[; ;pic16f876a.h: 1872: unsigned C2OUT :1;
+[; ;pic16f876a.h: 1873: };
+[; ;pic16f876a.h: 1874: struct {
+[; ;pic16f876a.h: 1875: unsigned CM0 :1;
+[; ;pic16f876a.h: 1876: unsigned CM1 :1;
+[; ;pic16f876a.h: 1877: unsigned CM2 :1;
+[; ;pic16f876a.h: 1878: };
+[; ;pic16f876a.h: 1879: } CMCONbits_t;
+[; ;pic16f876a.h: 1880: extern volatile CMCONbits_t CMCONbits @ 0x09C;
+[; ;pic16f876a.h: 1930: extern volatile unsigned char CVRCON @ 0x09D;
+"1932
+[; ;pic16f876a.h: 1932: asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+[; ;pic16f876a.h: 1935: typedef union {
+[; ;pic16f876a.h: 1936: struct {
+[; ;pic16f876a.h: 1937: unsigned CVR :4;
+[; ;pic16f876a.h: 1938: unsigned :1;
+[; ;pic16f876a.h: 1939: unsigned CVRR :1;
+[; ;pic16f876a.h: 1940: unsigned CVROE :1;
+[; ;pic16f876a.h: 1941: unsigned CVREN :1;
+[; ;pic16f876a.h: 1942: };
+[; ;pic16f876a.h: 1943: struct {
+[; ;pic16f876a.h: 1944: unsigned CVR0 :1;
+[; ;pic16f876a.h: 1945: unsigned CVR1 :1;
+[; ;pic16f876a.h: 1946: unsigned CVR2 :1;
+[; ;pic16f876a.h: 1947: unsigned CVR3 :1;
+[; ;pic16f876a.h: 1948: };
+[; ;pic16f876a.h: 1949: } CVRCONbits_t;
+[; ;pic16f876a.h: 1950: extern volatile CVRCONbits_t CVRCONbits @ 0x09D;
+[; ;pic16f876a.h: 1995: extern volatile unsigned char ADRESL @ 0x09E;
+"1997
+[; ;pic16f876a.h: 1997: asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+[; ;pic16f876a.h: 2002: extern volatile unsigned char ADCON1 @ 0x09F;
+"2004
+[; ;pic16f876a.h: 2004: asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+[; ;pic16f876a.h: 2007: typedef union {
+[; ;pic16f876a.h: 2008: struct {
+[; ;pic16f876a.h: 2009: unsigned PCFG :4;
+[; ;pic16f876a.h: 2010: unsigned :2;
+[; ;pic16f876a.h: 2011: unsigned ADCS2 :1;
+[; ;pic16f876a.h: 2012: unsigned ADFM :1;
+[; ;pic16f876a.h: 2013: };
+[; ;pic16f876a.h: 2014: struct {
+[; ;pic16f876a.h: 2015: unsigned PCFG0 :1;
+[; ;pic16f876a.h: 2016: unsigned PCFG1 :1;
+[; ;pic16f876a.h: 2017: unsigned PCFG2 :1;
+[; ;pic16f876a.h: 2018: unsigned PCFG3 :1;
+[; ;pic16f876a.h: 2019: };
+[; ;pic16f876a.h: 2020: } ADCON1bits_t;
+[; ;pic16f876a.h: 2021: extern volatile ADCON1bits_t ADCON1bits @ 0x09F;
+[; ;pic16f876a.h: 2061: extern volatile unsigned char EEDATA @ 0x10C;
+"2063
+[; ;pic16f876a.h: 2063: asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+[; ;pic16f876a.h: 2068: extern volatile unsigned char EEADR @ 0x10D;
+"2070
+[; ;pic16f876a.h: 2070: asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+[; ;pic16f876a.h: 2075: extern volatile unsigned char EEDATH @ 0x10E;
+"2077
+[; ;pic16f876a.h: 2077: asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+[; ;pic16f876a.h: 2082: extern volatile unsigned char EEADRH @ 0x10F;
+"2084
+[; ;pic16f876a.h: 2084: asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+[; ;pic16f876a.h: 2089: extern volatile unsigned char EECON1 @ 0x18C;
+"2091
+[; ;pic16f876a.h: 2091: asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+[; ;pic16f876a.h: 2094: typedef union {
+[; ;pic16f876a.h: 2095: struct {
+[; ;pic16f876a.h: 2096: unsigned RD :1;
+[; ;pic16f876a.h: 2097: unsigned WR :1;
+[; ;pic16f876a.h: 2098: unsigned WREN :1;
+[; ;pic16f876a.h: 2099: unsigned WRERR :1;
+[; ;pic16f876a.h: 2100: unsigned :3;
+[; ;pic16f876a.h: 2101: unsigned EEPGD :1;
+[; ;pic16f876a.h: 2102: };
+[; ;pic16f876a.h: 2103: } EECON1bits_t;
+[; ;pic16f876a.h: 2104: extern volatile EECON1bits_t EECON1bits @ 0x18C;
+[; ;pic16f876a.h: 2134: extern volatile unsigned char EECON2 @ 0x18D;
+"2136
+[; ;pic16f876a.h: 2136: asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+[; ;pic16f876a.h: 2146: extern volatile __bit ACKDT @ (((unsigned) &SSPCON2)*8) + 5;
+[; ;pic16f876a.h: 2148: extern volatile __bit ACKEN @ (((unsigned) &SSPCON2)*8) + 4;
+[; ;pic16f876a.h: 2150: extern volatile __bit ACKSTAT @ (((unsigned) &SSPCON2)*8) + 6;
+[; ;pic16f876a.h: 2152: extern volatile __bit ADCS0 @ (((unsigned) &ADCON0)*8) + 6;
+[; ;pic16f876a.h: 2154: extern volatile __bit ADCS1 @ (((unsigned) &ADCON0)*8) + 7;
+[; ;pic16f876a.h: 2156: extern volatile __bit ADCS2 @ (((unsigned) &ADCON1)*8) + 6;
+[; ;pic16f876a.h: 2158: extern volatile __bit ADDEN @ (((unsigned) &RCSTA)*8) + 3;
+[; ;pic16f876a.h: 2160: extern volatile __bit ADFM @ (((unsigned) &ADCON1)*8) + 7;
+[; ;pic16f876a.h: 2162: extern volatile __bit ADIE @ (((unsigned) &PIE1)*8) + 6;
+[; ;pic16f876a.h: 2164: extern volatile __bit ADIF @ (((unsigned) &PIR1)*8) + 6;
+[; ;pic16f876a.h: 2166: extern volatile __bit ADON @ (((unsigned) &ADCON0)*8) + 0;
+[; ;pic16f876a.h: 2168: extern volatile __bit BCLIE @ (((unsigned) &PIE2)*8) + 3;
+[; ;pic16f876a.h: 2170: extern volatile __bit BCLIF @ (((unsigned) &PIR2)*8) + 3;
+[; ;pic16f876a.h: 2172: extern volatile __bit BF @ (((unsigned) &SSPSTAT)*8) + 0;
+[; ;pic16f876a.h: 2174: extern volatile __bit BRGH @ (((unsigned) &TXSTA)*8) + 2;
+[; ;pic16f876a.h: 2176: extern volatile __bit C1INV @ (((unsigned) &CMCON)*8) + 4;
+[; ;pic16f876a.h: 2178: extern volatile __bit C1OUT @ (((unsigned) &CMCON)*8) + 6;
+[; ;pic16f876a.h: 2180: extern volatile __bit C2INV @ (((unsigned) &CMCON)*8) + 5;
+[; ;pic16f876a.h: 2182: extern volatile __bit C2OUT @ (((unsigned) &CMCON)*8) + 7;
+[; ;pic16f876a.h: 2184: extern volatile __bit CARRY @ (((unsigned) &STATUS)*8) + 0;
+[; ;pic16f876a.h: 2186: extern volatile __bit CCP1IE @ (((unsigned) &PIE1)*8) + 2;
+[; ;pic16f876a.h: 2188: extern volatile __bit CCP1IF @ (((unsigned) &PIR1)*8) + 2;
+[; ;pic16f876a.h: 2190: extern volatile __bit CCP1M0 @ (((unsigned) &CCP1CON)*8) + 0;
+[; ;pic16f876a.h: 2192: extern volatile __bit CCP1M1 @ (((unsigned) &CCP1CON)*8) + 1;
+[; ;pic16f876a.h: 2194: extern volatile __bit CCP1M2 @ (((unsigned) &CCP1CON)*8) + 2;
+[; ;pic16f876a.h: 2196: extern volatile __bit CCP1M3 @ (((unsigned) &CCP1CON)*8) + 3;
+[; ;pic16f876a.h: 2198: extern volatile __bit CCP1X @ (((unsigned) &CCP1CON)*8) + 5;
+[; ;pic16f876a.h: 2200: extern volatile __bit CCP1Y @ (((unsigned) &CCP1CON)*8) + 4;
+[; ;pic16f876a.h: 2202: extern volatile __bit CCP2IE @ (((unsigned) &PIE2)*8) + 0;
+[; ;pic16f876a.h: 2204: extern volatile __bit CCP2IF @ (((unsigned) &PIR2)*8) + 0;
+[; ;pic16f876a.h: 2206: extern volatile __bit CCP2M0 @ (((unsigned) &CCP2CON)*8) + 0;
+[; ;pic16f876a.h: 2208: extern volatile __bit CCP2M1 @ (((unsigned) &CCP2CON)*8) + 1;
+[; ;pic16f876a.h: 2210: extern volatile __bit CCP2M2 @ (((unsigned) &CCP2CON)*8) + 2;
+[; ;pic16f876a.h: 2212: extern volatile __bit CCP2M3 @ (((unsigned) &CCP2CON)*8) + 3;
+[; ;pic16f876a.h: 2214: extern volatile __bit CCP2X @ (((unsigned) &CCP2CON)*8) + 5;
+[; ;pic16f876a.h: 2216: extern volatile __bit CCP2Y @ (((unsigned) &CCP2CON)*8) + 4;
+[; ;pic16f876a.h: 2218: extern volatile __bit CHS0 @ (((unsigned) &ADCON0)*8) + 3;
+[; ;pic16f876a.h: 2220: extern volatile __bit CHS1 @ (((unsigned) &ADCON0)*8) + 4;
+[; ;pic16f876a.h: 2222: extern volatile __bit CHS2 @ (((unsigned) &ADCON0)*8) + 5;
+[; ;pic16f876a.h: 2224: extern volatile __bit CIS @ (((unsigned) &CMCON)*8) + 3;
+[; ;pic16f876a.h: 2226: extern volatile __bit CKE @ (((unsigned) &SSPSTAT)*8) + 6;
+[; ;pic16f876a.h: 2228: extern volatile __bit CKP @ (((unsigned) &SSPCON)*8) + 4;
+[; ;pic16f876a.h: 2230: extern volatile __bit CM0 @ (((unsigned) &CMCON)*8) + 0;
+[; ;pic16f876a.h: 2232: extern volatile __bit CM1 @ (((unsigned) &CMCON)*8) + 1;
+[; ;pic16f876a.h: 2234: extern volatile __bit CM2 @ (((unsigned) &CMCON)*8) + 2;
+[; ;pic16f876a.h: 2236: extern volatile __bit CMIE @ (((unsigned) &PIE2)*8) + 6;
+[; ;pic16f876a.h: 2238: extern volatile __bit CMIF @ (((unsigned) &PIR2)*8) + 6;
+[; ;pic16f876a.h: 2240: extern volatile __bit CREN @ (((unsigned) &RCSTA)*8) + 4;
+[; ;pic16f876a.h: 2242: extern volatile __bit CSRC @ (((unsigned) &TXSTA)*8) + 7;
+[; ;pic16f876a.h: 2244: extern volatile __bit CVR0 @ (((unsigned) &CVRCON)*8) + 0;
+[; ;pic16f876a.h: 2246: extern volatile __bit CVR1 @ (((unsigned) &CVRCON)*8) + 1;
+[; ;pic16f876a.h: 2248: extern volatile __bit CVR2 @ (((unsigned) &CVRCON)*8) + 2;
+[; ;pic16f876a.h: 2250: extern volatile __bit CVR3 @ (((unsigned) &CVRCON)*8) + 3;
+[; ;pic16f876a.h: 2252: extern volatile __bit CVREN @ (((unsigned) &CVRCON)*8) + 7;
+[; ;pic16f876a.h: 2254: extern volatile __bit CVROE @ (((unsigned) &CVRCON)*8) + 6;
+[; ;pic16f876a.h: 2256: extern volatile __bit CVRR @ (((unsigned) &CVRCON)*8) + 5;
+[; ;pic16f876a.h: 2258: extern volatile __bit DATA_ADDRESS @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f876a.h: 2260: extern volatile __bit DC @ (((unsigned) &STATUS)*8) + 1;
+[; ;pic16f876a.h: 2262: extern volatile __bit D_A @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f876a.h: 2264: extern volatile __bit D_nA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f876a.h: 2266: extern volatile __bit EEIE @ (((unsigned) &PIE2)*8) + 4;
+[; ;pic16f876a.h: 2268: extern volatile __bit EEIF @ (((unsigned) &PIR2)*8) + 4;
+[; ;pic16f876a.h: 2270: extern volatile __bit EEPGD @ (((unsigned) &EECON1)*8) + 7;
+[; ;pic16f876a.h: 2272: extern volatile __bit FERR @ (((unsigned) &RCSTA)*8) + 2;
+[; ;pic16f876a.h: 2274: extern volatile __bit GCEN @ (((unsigned) &SSPCON2)*8) + 7;
+[; ;pic16f876a.h: 2276: extern volatile __bit GIE @ (((unsigned) &INTCON)*8) + 7;
+[; ;pic16f876a.h: 2278: extern volatile __bit GO @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f876a.h: 2280: extern volatile __bit GO_DONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f876a.h: 2282: extern volatile __bit GO_nDONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f876a.h: 2284: extern volatile __bit I2C_DATA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f876a.h: 2286: extern volatile __bit I2C_READ @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f876a.h: 2288: extern volatile __bit I2C_START @ (((unsigned) &SSPSTAT)*8) + 3;
+[; ;pic16f876a.h: 2290: extern volatile __bit I2C_STOP @ (((unsigned) &SSPSTAT)*8) + 4;
+[; ;pic16f876a.h: 2292: extern volatile __bit INTE @ (((unsigned) &INTCON)*8) + 4;
+[; ;pic16f876a.h: 2294: extern volatile __bit INTEDG @ (((unsigned) &OPTION_REG)*8) + 6;
+[; ;pic16f876a.h: 2296: extern volatile __bit INTF @ (((unsigned) &INTCON)*8) + 1;
+[; ;pic16f876a.h: 2298: extern volatile __bit IRP @ (((unsigned) &STATUS)*8) + 7;
+[; ;pic16f876a.h: 2300: extern volatile __bit OERR @ (((unsigned) &RCSTA)*8) + 1;
+[; ;pic16f876a.h: 2302: extern volatile __bit PCFG0 @ (((unsigned) &ADCON1)*8) + 0;
+[; ;pic16f876a.h: 2304: extern volatile __bit PCFG1 @ (((unsigned) &ADCON1)*8) + 1;
+[; ;pic16f876a.h: 2306: extern volatile __bit PCFG2 @ (((unsigned) &ADCON1)*8) + 2;
+[; ;pic16f876a.h: 2308: extern volatile __bit PCFG3 @ (((unsigned) &ADCON1)*8) + 3;
+[; ;pic16f876a.h: 2310: extern volatile __bit PEIE @ (((unsigned) &INTCON)*8) + 6;
+[; ;pic16f876a.h: 2312: extern volatile __bit PEN @ (((unsigned) &SSPCON2)*8) + 2;
+[; ;pic16f876a.h: 2314: extern volatile __bit PS0 @ (((unsigned) &OPTION_REG)*8) + 0;
+[; ;pic16f876a.h: 2316: extern volatile __bit PS1 @ (((unsigned) &OPTION_REG)*8) + 1;
+[; ;pic16f876a.h: 2318: extern volatile __bit PS2 @ (((unsigned) &OPTION_REG)*8) + 2;
+[; ;pic16f876a.h: 2320: extern volatile __bit PSA @ (((unsigned) &OPTION_REG)*8) + 3;
+[; ;pic16f876a.h: 2322: extern volatile __bit RA0 @ (((unsigned) &PORTA)*8) + 0;
+[; ;pic16f876a.h: 2324: extern volatile __bit RA1 @ (((unsigned) &PORTA)*8) + 1;
+[; ;pic16f876a.h: 2326: extern volatile __bit RA2 @ (((unsigned) &PORTA)*8) + 2;
+[; ;pic16f876a.h: 2328: extern volatile __bit RA3 @ (((unsigned) &PORTA)*8) + 3;
+[; ;pic16f876a.h: 2330: extern volatile __bit RA4 @ (((unsigned) &PORTA)*8) + 4;
+[; ;pic16f876a.h: 2332: extern volatile __bit RA5 @ (((unsigned) &PORTA)*8) + 5;
+[; ;pic16f876a.h: 2334: extern volatile __bit RB0 @ (((unsigned) &PORTB)*8) + 0;
+[; ;pic16f876a.h: 2336: extern volatile __bit RB1 @ (((unsigned) &PORTB)*8) + 1;
+[; ;pic16f876a.h: 2338: extern volatile __bit RB2 @ (((unsigned) &PORTB)*8) + 2;
+[; ;pic16f876a.h: 2340: extern volatile __bit RB3 @ (((unsigned) &PORTB)*8) + 3;
+[; ;pic16f876a.h: 2342: extern volatile __bit RB4 @ (((unsigned) &PORTB)*8) + 4;
+[; ;pic16f876a.h: 2344: extern volatile __bit RB5 @ (((unsigned) &PORTB)*8) + 5;
+[; ;pic16f876a.h: 2346: extern volatile __bit RB6 @ (((unsigned) &PORTB)*8) + 6;
+[; ;pic16f876a.h: 2348: extern volatile __bit RB7 @ (((unsigned) &PORTB)*8) + 7;
+[; ;pic16f876a.h: 2350: extern volatile __bit RBIE @ (((unsigned) &INTCON)*8) + 3;
+[; ;pic16f876a.h: 2352: extern volatile __bit RBIF @ (((unsigned) &INTCON)*8) + 0;
+[; ;pic16f876a.h: 2354: extern volatile __bit RC0 @ (((unsigned) &PORTC)*8) + 0;
+[; ;pic16f876a.h: 2356: extern volatile __bit RC1 @ (((unsigned) &PORTC)*8) + 1;
+[; ;pic16f876a.h: 2358: extern volatile __bit RC2 @ (((unsigned) &PORTC)*8) + 2;
+[; ;pic16f876a.h: 2360: extern volatile __bit RC3 @ (((unsigned) &PORTC)*8) + 3;
+[; ;pic16f876a.h: 2362: extern volatile __bit RC4 @ (((unsigned) &PORTC)*8) + 4;
+[; ;pic16f876a.h: 2364: extern volatile __bit RC5 @ (((unsigned) &PORTC)*8) + 5;
+[; ;pic16f876a.h: 2366: extern volatile __bit RC6 @ (((unsigned) &PORTC)*8) + 6;
+[; ;pic16f876a.h: 2368: extern volatile __bit RC7 @ (((unsigned) &PORTC)*8) + 7;
+[; ;pic16f876a.h: 2370: extern volatile __bit RC8_9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f876a.h: 2372: extern volatile __bit RC9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f876a.h: 2374: extern volatile __bit RCD8 @ (((unsigned) &RCSTA)*8) + 0;
+[; ;pic16f876a.h: 2376: extern volatile __bit RCEN @ (((unsigned) &SSPCON2)*8) + 3;
+[; ;pic16f876a.h: 2378: extern volatile __bit RCIE @ (((unsigned) &PIE1)*8) + 5;
+[; ;pic16f876a.h: 2380: extern volatile __bit RCIF @ (((unsigned) &PIR1)*8) + 5;
+[; ;pic16f876a.h: 2382: extern volatile __bit RD @ (((unsigned) &EECON1)*8) + 0;
+[; ;pic16f876a.h: 2384: extern volatile __bit READ_WRITE @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f876a.h: 2386: extern volatile __bit RP0 @ (((unsigned) &STATUS)*8) + 5;
+[; ;pic16f876a.h: 2388: extern volatile __bit RP1 @ (((unsigned) &STATUS)*8) + 6;
+[; ;pic16f876a.h: 2390: extern volatile __bit RSEN @ (((unsigned) &SSPCON2)*8) + 1;
+[; ;pic16f876a.h: 2392: extern volatile __bit RX9 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f876a.h: 2394: extern volatile __bit RX9D @ (((unsigned) &RCSTA)*8) + 0;
+[; ;pic16f876a.h: 2396: extern volatile __bit R_W @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f876a.h: 2398: extern volatile __bit R_nW @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f876a.h: 2400: extern volatile __bit SEN @ (((unsigned) &SSPCON2)*8) + 0;
+[; ;pic16f876a.h: 2402: extern volatile __bit SMP @ (((unsigned) &SSPSTAT)*8) + 7;
+[; ;pic16f876a.h: 2404: extern volatile __bit SPEN @ (((unsigned) &RCSTA)*8) + 7;
+[; ;pic16f876a.h: 2406: extern volatile __bit SREN @ (((unsigned) &RCSTA)*8) + 5;
+[; ;pic16f876a.h: 2408: extern volatile __bit SSPEN @ (((unsigned) &SSPCON)*8) + 5;
+[; ;pic16f876a.h: 2410: extern volatile __bit SSPIE @ (((unsigned) &PIE1)*8) + 3;
+[; ;pic16f876a.h: 2412: extern volatile __bit SSPIF @ (((unsigned) &PIR1)*8) + 3;
+[; ;pic16f876a.h: 2414: extern volatile __bit SSPM0 @ (((unsigned) &SSPCON)*8) + 0;
+[; ;pic16f876a.h: 2416: extern volatile __bit SSPM1 @ (((unsigned) &SSPCON)*8) + 1;
+[; ;pic16f876a.h: 2418: extern volatile __bit SSPM2 @ (((unsigned) &SSPCON)*8) + 2;
+[; ;pic16f876a.h: 2420: extern volatile __bit SSPM3 @ (((unsigned) &SSPCON)*8) + 3;
+[; ;pic16f876a.h: 2422: extern volatile __bit SSPOV @ (((unsigned) &SSPCON)*8) + 6;
+[; ;pic16f876a.h: 2424: extern volatile __bit SYNC @ (((unsigned) &TXSTA)*8) + 4;
+[; ;pic16f876a.h: 2426: extern volatile __bit T0CS @ (((unsigned) &OPTION_REG)*8) + 5;
+[; ;pic16f876a.h: 2428: extern volatile __bit T0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f876a.h: 2430: extern volatile __bit T0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f876a.h: 2432: extern volatile __bit T0SE @ (((unsigned) &OPTION_REG)*8) + 4;
+[; ;pic16f876a.h: 2434: extern volatile __bit T1CKPS0 @ (((unsigned) &T1CON)*8) + 4;
+[; ;pic16f876a.h: 2436: extern volatile __bit T1CKPS1 @ (((unsigned) &T1CON)*8) + 5;
+[; ;pic16f876a.h: 2438: extern volatile __bit T1INSYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f876a.h: 2440: extern volatile __bit T1OSCEN @ (((unsigned) &T1CON)*8) + 3;
+[; ;pic16f876a.h: 2442: extern volatile __bit T1SYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f876a.h: 2444: extern volatile __bit T2CKPS0 @ (((unsigned) &T2CON)*8) + 0;
+[; ;pic16f876a.h: 2446: extern volatile __bit T2CKPS1 @ (((unsigned) &T2CON)*8) + 1;
+[; ;pic16f876a.h: 2448: extern volatile __bit TMR0IE @ (((unsigned) &INTCON)*8) + 5;
+[; ;pic16f876a.h: 2450: extern volatile __bit TMR0IF @ (((unsigned) &INTCON)*8) + 2;
+[; ;pic16f876a.h: 2452: extern volatile __bit TMR1CS @ (((unsigned) &T1CON)*8) + 1;
+[; ;pic16f876a.h: 2454: extern volatile __bit TMR1IE @ (((unsigned) &PIE1)*8) + 0;
+[; ;pic16f876a.h: 2456: extern volatile __bit TMR1IF @ (((unsigned) &PIR1)*8) + 0;
+[; ;pic16f876a.h: 2458: extern volatile __bit TMR1ON @ (((unsigned) &T1CON)*8) + 0;
+[; ;pic16f876a.h: 2460: extern volatile __bit TMR2IE @ (((unsigned) &PIE1)*8) + 1;
+[; ;pic16f876a.h: 2462: extern volatile __bit TMR2IF @ (((unsigned) &PIR1)*8) + 1;
+[; ;pic16f876a.h: 2464: extern volatile __bit TMR2ON @ (((unsigned) &T2CON)*8) + 2;
+[; ;pic16f876a.h: 2466: extern volatile __bit TOUTPS0 @ (((unsigned) &T2CON)*8) + 3;
+[; ;pic16f876a.h: 2468: extern volatile __bit TOUTPS1 @ (((unsigned) &T2CON)*8) + 4;
+[; ;pic16f876a.h: 2470: extern volatile __bit TOUTPS2 @ (((unsigned) &T2CON)*8) + 5;
+[; ;pic16f876a.h: 2472: extern volatile __bit TOUTPS3 @ (((unsigned) &T2CON)*8) + 6;
+[; ;pic16f876a.h: 2474: extern volatile __bit TRISA0 @ (((unsigned) &TRISA)*8) + 0;
+[; ;pic16f876a.h: 2476: extern volatile __bit TRISA1 @ (((unsigned) &TRISA)*8) + 1;
+[; ;pic16f876a.h: 2478: extern volatile __bit TRISA2 @ (((unsigned) &TRISA)*8) + 2;
+[; ;pic16f876a.h: 2480: extern volatile __bit TRISA3 @ (((unsigned) &TRISA)*8) + 3;
+[; ;pic16f876a.h: 2482: extern volatile __bit TRISA4 @ (((unsigned) &TRISA)*8) + 4;
+[; ;pic16f876a.h: 2484: extern volatile __bit TRISA5 @ (((unsigned) &TRISA)*8) + 5;
+[; ;pic16f876a.h: 2486: extern volatile __bit TRISB0 @ (((unsigned) &TRISB)*8) + 0;
+[; ;pic16f876a.h: 2488: extern volatile __bit TRISB1 @ (((unsigned) &TRISB)*8) + 1;
+[; ;pic16f876a.h: 2490: extern volatile __bit TRISB2 @ (((unsigned) &TRISB)*8) + 2;
+[; ;pic16f876a.h: 2492: extern volatile __bit TRISB3 @ (((unsigned) &TRISB)*8) + 3;
+[; ;pic16f876a.h: 2494: extern volatile __bit TRISB4 @ (((unsigned) &TRISB)*8) + 4;
+[; ;pic16f876a.h: 2496: extern volatile __bit TRISB5 @ (((unsigned) &TRISB)*8) + 5;
+[; ;pic16f876a.h: 2498: extern volatile __bit TRISB6 @ (((unsigned) &TRISB)*8) + 6;
+[; ;pic16f876a.h: 2500: extern volatile __bit TRISB7 @ (((unsigned) &TRISB)*8) + 7;
+[; ;pic16f876a.h: 2502: extern volatile __bit TRISC0 @ (((unsigned) &TRISC)*8) + 0;
+[; ;pic16f876a.h: 2504: extern volatile __bit TRISC1 @ (((unsigned) &TRISC)*8) + 1;
+[; ;pic16f876a.h: 2506: extern volatile __bit TRISC2 @ (((unsigned) &TRISC)*8) + 2;
+[; ;pic16f876a.h: 2508: extern volatile __bit TRISC3 @ (((unsigned) &TRISC)*8) + 3;
+[; ;pic16f876a.h: 2510: extern volatile __bit TRISC4 @ (((unsigned) &TRISC)*8) + 4;
+[; ;pic16f876a.h: 2512: extern volatile __bit TRISC5 @ (((unsigned) &TRISC)*8) + 5;
+[; ;pic16f876a.h: 2514: extern volatile __bit TRISC6 @ (((unsigned) &TRISC)*8) + 6;
+[; ;pic16f876a.h: 2516: extern volatile __bit TRISC7 @ (((unsigned) &TRISC)*8) + 7;
+[; ;pic16f876a.h: 2518: extern volatile __bit TRMT @ (((unsigned) &TXSTA)*8) + 1;
+[; ;pic16f876a.h: 2520: extern volatile __bit TX8_9 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f876a.h: 2522: extern volatile __bit TX9 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f876a.h: 2524: extern volatile __bit TX9D @ (((unsigned) &TXSTA)*8) + 0;
+[; ;pic16f876a.h: 2526: extern volatile __bit TXD8 @ (((unsigned) &TXSTA)*8) + 0;
+[; ;pic16f876a.h: 2528: extern volatile __bit TXEN @ (((unsigned) &TXSTA)*8) + 5;
+[; ;pic16f876a.h: 2530: extern volatile __bit TXIE @ (((unsigned) &PIE1)*8) + 4;
+[; ;pic16f876a.h: 2532: extern volatile __bit TXIF @ (((unsigned) &PIR1)*8) + 4;
+[; ;pic16f876a.h: 2534: extern volatile __bit UA @ (((unsigned) &SSPSTAT)*8) + 1;
+[; ;pic16f876a.h: 2536: extern volatile __bit WCOL @ (((unsigned) &SSPCON)*8) + 7;
+[; ;pic16f876a.h: 2538: extern volatile __bit WR @ (((unsigned) &EECON1)*8) + 1;
+[; ;pic16f876a.h: 2540: extern volatile __bit WREN @ (((unsigned) &EECON1)*8) + 2;
+[; ;pic16f876a.h: 2542: extern volatile __bit WRERR @ (((unsigned) &EECON1)*8) + 3;
+[; ;pic16f876a.h: 2544: extern volatile __bit ZERO @ (((unsigned) &STATUS)*8) + 2;
+[; ;pic16f876a.h: 2546: extern volatile __bit nA @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f876a.h: 2548: extern volatile __bit nADDRESS @ (((unsigned) &SSPSTAT)*8) + 5;
+[; ;pic16f876a.h: 2550: extern volatile __bit nBO @ (((unsigned) &PCON)*8) + 0;
+[; ;pic16f876a.h: 2552: extern volatile __bit nBOR @ (((unsigned) &PCON)*8) + 0;
+[; ;pic16f876a.h: 2554: extern volatile __bit nDONE @ (((unsigned) &ADCON0)*8) + 2;
+[; ;pic16f876a.h: 2556: extern volatile __bit nPD @ (((unsigned) &STATUS)*8) + 3;
+[; ;pic16f876a.h: 2558: extern volatile __bit nPOR @ (((unsigned) &PCON)*8) + 1;
+[; ;pic16f876a.h: 2560: extern volatile __bit nRBPU @ (((unsigned) &OPTION_REG)*8) + 7;
+[; ;pic16f876a.h: 2562: extern volatile __bit nRC8 @ (((unsigned) &RCSTA)*8) + 6;
+[; ;pic16f876a.h: 2564: extern volatile __bit nT1SYNC @ (((unsigned) &T1CON)*8) + 2;
+[; ;pic16f876a.h: 2566: extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
+[; ;pic16f876a.h: 2568: extern volatile __bit nTX8 @ (((unsigned) &TXSTA)*8) + 6;
+[; ;pic16f876a.h: 2570: extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic16f876a.h: 2572: extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
+[; ;pic.h: 29: extern void __nop(void);
+[; ;pic.h: 78: extern unsigned int flash_read(unsigned short addr);
+[; ;eeprom_routines.h: 114: extern void eeprom_write(unsigned char addr, unsigned char value);
+[; ;eeprom_routines.h: 115: extern unsigned char eeprom_read(unsigned char addr);
+[; ;eeprom_routines.h: 116: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
+[; ;eeprom_routines.h: 117: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
+[; ;pic.h: 153: extern __nonreentrant void _delay(unsigned long);
+[; ;pic.h: 155: extern __nonreentrant void _delaywdt(unsigned long);
+[; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
+[; ;pic.h: 194: extern __bank0 __bit __powerdown;
+[; ;pic.h: 195: extern __bank0 __bit __timeout;
+[v F1019 `Cuc ~T0 @X0 -> 5 `i t ]
+"66 Nokia_display_driver/STE2007_nokia_1202_display.c
+[v _nlcd_Font `F1019 ~T0 @X0 -> 256 `i e ]
+[i _nlcd_Font
+:U ..
+:U ..
+"67
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"68
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"69
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"70
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"71
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"72
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"73
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"74
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"75
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"76
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"77
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"78
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"79
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"80
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"81
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"82
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"83
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"84
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"85
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"86
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"87
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"88
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"89
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"90
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"91
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"92
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"93
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"94
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"95
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"96
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"97
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"98
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"99
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"100
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 95 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"101
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"102
+-> -> 20 `i `uc
+-> -> 127 `i `uc
+-> -> 20 `i `uc
+-> -> 127 `i `uc
+-> -> 20 `i `uc
+..
+:U ..
+"103
+-> -> 36 `i `uc
+-> -> 42 `i `uc
+-> -> 127 `i `uc
+-> -> 42 `i `uc
+-> -> 18 `i `uc
+..
+:U ..
+"104
+-> -> 35 `i `uc
+-> -> 19 `i `uc
+-> -> 8 `i `uc
+-> -> 100 `i `uc
+-> -> 98 `i `uc
+..
+:U ..
+"105
+-> -> 54 `i `uc
+-> -> 73 `i `uc
+-> -> 85 `i `uc
+-> -> 34 `i `uc
+-> -> 80 `i `uc
+..
+:U ..
+"106
+-> -> 0 `i `uc
+-> -> 5 `i `uc
+-> -> 3 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"107
+-> -> 0 `i `uc
+-> -> 28 `i `uc
+-> -> 34 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"108
+-> -> 0 `i `uc
+-> -> 65 `i `uc
+-> -> 34 `i `uc
+-> -> 28 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"109
+-> -> 8 `i `uc
+-> -> 42 `i `uc
+-> -> 28 `i `uc
+-> -> 42 `i `uc
+-> -> 8 `i `uc
+..
+:U ..
+"110
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 62 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+..
+:U ..
+"111
+-> -> 0 `i `uc
+-> -> 80 `i `uc
+-> -> 48 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"112
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+..
+:U ..
+"113
+-> -> 0 `i `uc
+-> -> 96 `i `uc
+-> -> 96 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"114
+-> -> 32 `i `uc
+-> -> 16 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+..
+:U ..
+"115
+-> -> 62 `i `uc
+-> -> 81 `i `uc
+-> -> 73 `i `uc
+-> -> 69 `i `uc
+-> -> 62 `i `uc
+..
+:U ..
+"116
+-> -> 0 `i `uc
+-> -> 66 `i `uc
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"117
+-> -> 66 `i `uc
+-> -> 97 `i `uc
+-> -> 81 `i `uc
+-> -> 73 `i `uc
+-> -> 70 `i `uc
+..
+:U ..
+"118
+-> -> 33 `i `uc
+-> -> 65 `i `uc
+-> -> 69 `i `uc
+-> -> 75 `i `uc
+-> -> 49 `i `uc
+..
+:U ..
+"119
+-> -> 24 `i `uc
+-> -> 20 `i `uc
+-> -> 18 `i `uc
+-> -> 127 `i `uc
+-> -> 16 `i `uc
+..
+:U ..
+"120
+-> -> 39 `i `uc
+-> -> 69 `i `uc
+-> -> 69 `i `uc
+-> -> 69 `i `uc
+-> -> 57 `i `uc
+..
+:U ..
+"121
+-> -> 60 `i `uc
+-> -> 74 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 48 `i `uc
+..
+:U ..
+"122
+-> -> 1 `i `uc
+-> -> 113 `i `uc
+-> -> 9 `i `uc
+-> -> 5 `i `uc
+-> -> 3 `i `uc
+..
+:U ..
+"123
+-> -> 54 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 54 `i `uc
+..
+:U ..
+"124
+-> -> 6 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 41 `i `uc
+-> -> 30 `i `uc
+..
+:U ..
+"125
+-> -> 0 `i `uc
+-> -> 54 `i `uc
+-> -> 54 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"126
+-> -> 0 `i `uc
+-> -> 86 `i `uc
+-> -> 54 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"127
+-> -> 0 `i `uc
+-> -> 8 `i `uc
+-> -> 20 `i `uc
+-> -> 34 `i `uc
+-> -> 65 `i `uc
+..
+:U ..
+"128
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+..
+:U ..
+"129
+-> -> 65 `i `uc
+-> -> 34 `i `uc
+-> -> 20 `i `uc
+-> -> 8 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"130
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 81 `i `uc
+-> -> 9 `i `uc
+-> -> 6 `i `uc
+..
+:U ..
+"131
+-> -> 50 `i `uc
+-> -> 73 `i `uc
+-> -> 121 `i `uc
+-> -> 65 `i `uc
+-> -> 62 `i `uc
+..
+:U ..
+"132
+-> -> 126 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 126 `i `uc
+..
+:U ..
+"133
+-> -> 127 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 54 `i `uc
+..
+:U ..
+"134
+-> -> 62 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 34 `i `uc
+..
+:U ..
+"135
+-> -> 127 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 34 `i `uc
+-> -> 28 `i `uc
+..
+:U ..
+"136
+-> -> 127 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 65 `i `uc
+..
+:U ..
+"137
+-> -> 127 `i `uc
+-> -> 9 `i `uc
+-> -> 9 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+"138
+-> -> 62 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 81 `i `uc
+-> -> 50 `i `uc
+..
+:U ..
+"139
+-> -> 127 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"140
+-> -> 0 `i `uc
+-> -> 65 `i `uc
+-> -> 127 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"141
+-> -> 32 `i `uc
+-> -> 64 `i `uc
+-> -> 65 `i `uc
+-> -> 63 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+"142
+-> -> 127 `i `uc
+-> -> 8 `i `uc
+-> -> 20 `i `uc
+-> -> 34 `i `uc
+-> -> 65 `i `uc
+..
+:U ..
+"143
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+..
+:U ..
+"144
+-> -> 127 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"145
+-> -> 127 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 16 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"146
+-> -> 62 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 62 `i `uc
+..
+:U ..
+"147
+-> -> 127 `i `uc
+-> -> 9 `i `uc
+-> -> 9 `i `uc
+-> -> 9 `i `uc
+-> -> 6 `i `uc
+..
+:U ..
+"148
+-> -> 62 `i `uc
+-> -> 65 `i `uc
+-> -> 81 `i `uc
+-> -> 33 `i `uc
+-> -> 94 `i `uc
+..
+:U ..
+"149
+-> -> 127 `i `uc
+-> -> 9 `i `uc
+-> -> 25 `i `uc
+-> -> 41 `i `uc
+-> -> 70 `i `uc
+..
+:U ..
+"150
+-> -> 70 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 49 `i `uc
+..
+:U ..
+"151
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 127 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+"152
+-> -> 63 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 63 `i `uc
+..
+:U ..
+"153
+-> -> 31 `i `uc
+-> -> 32 `i `uc
+-> -> 64 `i `uc
+-> -> 32 `i `uc
+-> -> 31 `i `uc
+..
+:U ..
+"154
+-> -> 127 `i `uc
+-> -> 32 `i `uc
+-> -> 24 `i `uc
+-> -> 32 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"155
+-> -> 99 `i `uc
+-> -> 20 `i `uc
+-> -> 8 `i `uc
+-> -> 20 `i `uc
+-> -> 99 `i `uc
+..
+:U ..
+"156
+-> -> 3 `i `uc
+-> -> 4 `i `uc
+-> -> 120 `i `uc
+-> -> 4 `i `uc
+-> -> 3 `i `uc
+..
+:U ..
+"157
+-> -> 97 `i `uc
+-> -> 81 `i `uc
+-> -> 73 `i `uc
+-> -> 69 `i `uc
+-> -> 67 `i `uc
+..
+:U ..
+"158
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"159
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 16 `i `uc
+-> -> 32 `i `uc
+..
+:U ..
+"160
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"161
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+..
+:U ..
+"162
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+..
+:U ..
+"163
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"164
+-> -> 32 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 120 `i `uc
+..
+:U ..
+"165
+-> -> 127 `i `uc
+-> -> 72 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 56 `i `uc
+..
+:U ..
+"166
+-> -> 56 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 32 `i `uc
+..
+:U ..
+"167
+-> -> 56 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 72 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"168
+-> -> 56 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 24 `i `uc
+..
+:U ..
+"169
+-> -> 8 `i `uc
+-> -> 126 `i `uc
+-> -> 9 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+..
+:U ..
+"170
+-> -> 8 `i `uc
+-> -> 20 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 60 `i `uc
+..
+:U ..
+"171
+-> -> 127 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 120 `i `uc
+..
+:U ..
+"172
+-> -> 0 `i `uc
+-> -> 68 `i `uc
+-> -> 125 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"173
+-> -> 32 `i `uc
+-> -> 64 `i `uc
+-> -> 68 `i `uc
+-> -> 61 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"174
+-> -> 0 `i `uc
+-> -> 127 `i `uc
+-> -> 16 `i `uc
+-> -> 40 `i `uc
+-> -> 68 `i `uc
+..
+:U ..
+"175
+-> -> 0 `i `uc
+-> -> 65 `i `uc
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"176
+-> -> 124 `i `uc
+-> -> 4 `i `uc
+-> -> 24 `i `uc
+-> -> 4 `i `uc
+-> -> 120 `i `uc
+..
+:U ..
+"177
+-> -> 124 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 120 `i `uc
+..
+:U ..
+"178
+-> -> 56 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 56 `i `uc
+..
+:U ..
+"179
+-> -> 124 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 8 `i `uc
+..
+:U ..
+"180
+-> -> 8 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 24 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"181
+-> -> 124 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+..
+:U ..
+"182
+-> -> 72 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 32 `i `uc
+..
+:U ..
+"183
+-> -> 4 `i `uc
+-> -> 63 `i `uc
+-> -> 68 `i `uc
+-> -> 64 `i `uc
+-> -> 32 `i `uc
+..
+:U ..
+"184
+-> -> 60 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 32 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"185
+-> -> 28 `i `uc
+-> -> 32 `i `uc
+-> -> 64 `i `uc
+-> -> 32 `i `uc
+-> -> 28 `i `uc
+..
+:U ..
+"186
+-> -> 60 `i `uc
+-> -> 64 `i `uc
+-> -> 48 `i `uc
+-> -> 64 `i `uc
+-> -> 60 `i `uc
+..
+:U ..
+"187
+-> -> 68 `i `uc
+-> -> 40 `i `uc
+-> -> 16 `i `uc
+-> -> 40 `i `uc
+-> -> 68 `i `uc
+..
+:U ..
+"188
+-> -> 12 `i `uc
+-> -> 80 `i `uc
+-> -> 80 `i `uc
+-> -> 80 `i `uc
+-> -> 60 `i `uc
+..
+:U ..
+"189
+-> -> 68 `i `uc
+-> -> 100 `i `uc
+-> -> 84 `i `uc
+-> -> 76 `i `uc
+-> -> 68 `i `uc
+..
+:U ..
+"190
+-> -> 0 `i `uc
+-> -> 8 `i `uc
+-> -> 54 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"191
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 127 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"192
+-> -> 0 `i `uc
+-> -> 65 `i `uc
+-> -> 54 `i `uc
+-> -> 8 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"193
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+..
+:U ..
+"194
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"195
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"196
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"197
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"198
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"199
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"200
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"201
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"202
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"203
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"204
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"205
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"206
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"207
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"208
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"209
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"210
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"211
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"212
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"213
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"214
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"215
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"216
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"217
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"218
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"219
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"220
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"221
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"222
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"223
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"224
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"225
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"226
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"227
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"228
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"229
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"230
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"231
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"232
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"233
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"234
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"235
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"236
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"237
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"238
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"239
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"240
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"241
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"242
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"243
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 5 `i `uc
+-> -> 7 `i `uc
+..
+:U ..
+"244
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"245
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"246
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"247
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"248
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"249
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"250
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"251
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"252
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"253
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"254
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"255
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"256
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"257
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"258
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"259
+-> -> 126 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 126 `i `uc
+..
+:U ..
+"260
+-> -> 127 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 51 `i `uc
+..
+:U ..
+"261
+-> -> 127 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 54 `i `uc
+..
+:U ..
+"262
+-> -> 127 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 3 `i `uc
+..
+:U ..
+"263
+-> -> 224 `i `uc
+-> -> 81 `i `uc
+-> -> 79 `i `uc
+-> -> 65 `i `uc
+-> -> 255 `i `uc
+..
+:U ..
+"264
+-> -> 127 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+..
+:U ..
+"265
+-> -> 119 `i `uc
+-> -> 8 `i `uc
+-> -> 127 `i `uc
+-> -> 8 `i `uc
+-> -> 119 `i `uc
+..
+:U ..
+"266
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 54 `i `uc
+..
+:U ..
+"267
+-> -> 127 `i `uc
+-> -> 16 `i `uc
+-> -> 8 `i `uc
+-> -> 4 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"268
+-> -> 124 `i `uc
+-> -> 33 `i `uc
+-> -> 18 `i `uc
+-> -> 9 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"269
+-> -> 127 `i `uc
+-> -> 8 `i `uc
+-> -> 20 `i `uc
+-> -> 34 `i `uc
+-> -> 65 `i `uc
+..
+:U ..
+"270
+-> -> 32 `i `uc
+-> -> 65 `i `uc
+-> -> 63 `i `uc
+-> -> 1 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"271
+-> -> 127 `i `uc
+-> -> 2 `i `uc
+-> -> 12 `i `uc
+-> -> 2 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"272
+-> -> 127 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"273
+-> -> 62 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 62 `i `uc
+..
+:U ..
+"274
+-> -> 127 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"275
+-> -> 127 `i `uc
+-> -> 9 `i `uc
+-> -> 9 `i `uc
+-> -> 9 `i `uc
+-> -> 6 `i `uc
+..
+:U ..
+"276
+-> -> 62 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 65 `i `uc
+-> -> 34 `i `uc
+..
+:U ..
+"277
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 127 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+"278
+-> -> 39 `i `uc
+-> -> 72 `i `uc
+-> -> 72 `i `uc
+-> -> 72 `i `uc
+-> -> 63 `i `uc
+..
+:U ..
+"279
+-> -> 28 `i `uc
+-> -> 34 `i `uc
+-> -> 127 `i `uc
+-> -> 34 `i `uc
+-> -> 28 `i `uc
+..
+:U ..
+"280
+-> -> 99 `i `uc
+-> -> 20 `i `uc
+-> -> 8 `i `uc
+-> -> 20 `i `uc
+-> -> 99 `i `uc
+..
+:U ..
+"281
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 255 `i `uc
+..
+:U ..
+"282
+-> -> 7 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"283
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"284
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 127 `i `uc
+-> -> 64 `i `uc
+-> -> 255 `i `uc
+..
+:U ..
+"285
+-> -> 1 `i `uc
+-> -> 127 `i `uc
+-> -> 72 `i `uc
+-> -> 72 `i `uc
+-> -> 48 `i `uc
+..
+:U ..
+"286
+-> -> 127 `i `uc
+-> -> 72 `i `uc
+-> -> 48 `i `uc
+-> -> 0 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"287
+-> -> 127 `i `uc
+-> -> 72 `i `uc
+-> -> 72 `i `uc
+-> -> 48 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"288
+-> -> 34 `i `uc
+-> -> 65 `i `uc
+-> -> 73 `i `uc
+-> -> 73 `i `uc
+-> -> 62 `i `uc
+..
+:U ..
+"289
+-> -> 127 `i `uc
+-> -> 8 `i `uc
+-> -> 62 `i `uc
+-> -> 65 `i `uc
+-> -> 62 `i `uc
+..
+:U ..
+"290
+-> -> 70 `i `uc
+-> -> 41 `i `uc
+-> -> 25 `i `uc
+-> -> 9 `i `uc
+-> -> 127 `i `uc
+..
+:U ..
+"291
+-> -> 32 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 120 `i `uc
+..
+:U ..
+"292
+-> -> 60 `i `uc
+-> -> 74 `i `uc
+-> -> 74 `i `uc
+-> -> 73 `i `uc
+-> -> 49 `i `uc
+..
+:U ..
+"293
+-> -> 124 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 40 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"294
+-> -> 124 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 12 `i `uc
+..
+:U ..
+"295
+-> -> 224 `i `uc
+-> -> 84 `i `uc
+-> -> 76 `i `uc
+-> -> 68 `i `uc
+-> -> 252 `i `uc
+..
+:U ..
+"296
+-> -> 56 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 8 `i `uc
+..
+:U ..
+"297
+-> -> 108 `i `uc
+-> -> 16 `i `uc
+-> -> 124 `i `uc
+-> -> 16 `i `uc
+-> -> 108 `i `uc
+..
+:U ..
+"298
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 40 `i `uc
+..
+:U ..
+"299
+-> -> 124 `i `uc
+-> -> 32 `i `uc
+-> -> 16 `i `uc
+-> -> 8 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"300
+-> -> 120 `i `uc
+-> -> 66 `i `uc
+-> -> 36 `i `uc
+-> -> 18 `i `uc
+-> -> 120 `i `uc
+..
+:U ..
+"301
+-> -> 124 `i `uc
+-> -> 16 `i `uc
+-> -> 40 `i `uc
+-> -> 68 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"302
+-> -> 32 `i `uc
+-> -> 68 `i `uc
+-> -> 60 `i `uc
+-> -> 4 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"303
+-> -> 124 `i `uc
+-> -> 8 `i `uc
+-> -> 16 `i `uc
+-> -> 8 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"304
+-> -> 124 `i `uc
+-> -> 16 `i `uc
+-> -> 16 `i `uc
+-> -> 16 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"305
+-> -> 56 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 56 `i `uc
+..
+:U ..
+"306
+-> -> 124 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"307
+-> -> 124 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 20 `i `uc
+-> -> 8 `i `uc
+..
+:U ..
+"308
+-> -> 56 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+-> -> 68 `i `uc
+..
+:U ..
+"309
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 124 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+..
+:U ..
+"310
+-> -> 12 `i `uc
+-> -> 80 `i `uc
+-> -> 80 `i `uc
+-> -> 80 `i `uc
+-> -> 60 `i `uc
+..
+:U ..
+"311
+-> -> 24 `i `uc
+-> -> 36 `i `uc
+-> -> 126 `i `uc
+-> -> 36 `i `uc
+-> -> 24 `i `uc
+..
+:U ..
+"312
+-> -> 68 `i `uc
+-> -> 40 `i `uc
+-> -> 16 `i `uc
+-> -> 40 `i `uc
+-> -> 68 `i `uc
+..
+:U ..
+"313
+-> -> 124 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 64 `i `uc
+-> -> 252 `i `uc
+..
+:U ..
+"314
+-> -> 12 `i `uc
+-> -> 16 `i `uc
+-> -> 16 `i `uc
+-> -> 16 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"315
+-> -> 124 `i `uc
+-> -> 64 `i `uc
+-> -> 124 `i `uc
+-> -> 64 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"316
+-> -> 124 `i `uc
+-> -> 64 `i `uc
+-> -> 124 `i `uc
+-> -> 64 `i `uc
+-> -> 252 `i `uc
+..
+:U ..
+"317
+-> -> 4 `i `uc
+-> -> 124 `i `uc
+-> -> 80 `i `uc
+-> -> 80 `i `uc
+-> -> 32 `i `uc
+..
+:U ..
+"318
+-> -> 124 `i `uc
+-> -> 80 `i `uc
+-> -> 32 `i `uc
+-> -> 0 `i `uc
+-> -> 124 `i `uc
+..
+:U ..
+"319
+-> -> 124 `i `uc
+-> -> 80 `i `uc
+-> -> 80 `i `uc
+-> -> 32 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"320
+-> -> 40 `i `uc
+-> -> 68 `i `uc
+-> -> 84 `i `uc
+-> -> 84 `i `uc
+-> -> 56 `i `uc
+..
+:U ..
+"321
+-> -> 124 `i `uc
+-> -> 16 `i `uc
+-> -> 56 `i `uc
+-> -> 68 `i `uc
+-> -> 56 `i `uc
+..
+:U ..
+"322
+-> -> 8 `i `uc
+-> -> 84 `i `uc
+-> -> 52 `i `uc
+-> -> 20 `i `uc
+-> -> 124 `i `uc
+..
+..
+]
+[; ;STE2007_nokia_1202_display.c: 66: const unsigned char nlcd_Font[256][5] ={
+[; ;STE2007_nokia_1202_display.c: 67: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 68: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 69: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 70: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 71: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 72: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 73: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 74: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 75: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 76: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 77: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 78: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 79: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 80: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 81: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 82: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 83: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 84: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 85: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 86: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 87: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 88: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 89: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 90: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 91: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 92: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 93: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 94: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 95: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 96: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 97: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 98: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 99: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 100: {0x00, 0x00, 0x5F, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 101: {0x00, 0x07, 0x00, 0x07, 0x00},
+[; ;STE2007_nokia_1202_display.c: 102: {0x14, 0x7F, 0x14, 0x7F, 0x14},
+[; ;STE2007_nokia_1202_display.c: 103: {0x24, 0x2A, 0x7F, 0x2A, 0x12},
+[; ;STE2007_nokia_1202_display.c: 104: {0x23, 0x13, 0x08, 0x64, 0x62},
+[; ;STE2007_nokia_1202_display.c: 105: {0x36, 0x49, 0x55, 0x22, 0x50},
+[; ;STE2007_nokia_1202_display.c: 106: {0x00, 0x05, 0x03, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 107: {0x00, 0x1C, 0x22, 0x41, 0x00},
+[; ;STE2007_nokia_1202_display.c: 108: {0x00, 0x41, 0x22, 0x1C, 0x00},
+[; ;STE2007_nokia_1202_display.c: 109: {0x08, 0x2A, 0x1C, 0x2A, 0x08},
+[; ;STE2007_nokia_1202_display.c: 110: {0x08, 0x08, 0x3E, 0x08, 0x08},
+[; ;STE2007_nokia_1202_display.c: 111: {0x00, 0x50, 0x30, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 112: {0x08, 0x08, 0x08, 0x08, 0x08},
+[; ;STE2007_nokia_1202_display.c: 113: {0x00, 0x60, 0x60, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 114: {0x20, 0x10, 0x08, 0x04, 0x02},
+[; ;STE2007_nokia_1202_display.c: 115: {0x3E, 0x51, 0x49, 0x45, 0x3E},
+[; ;STE2007_nokia_1202_display.c: 116: {0x00, 0x42, 0x7F, 0x40, 0x00},
+[; ;STE2007_nokia_1202_display.c: 117: {0x42, 0x61, 0x51, 0x49, 0x46},
+[; ;STE2007_nokia_1202_display.c: 118: {0x21, 0x41, 0x45, 0x4B, 0x31},
+[; ;STE2007_nokia_1202_display.c: 119: {0x18, 0x14, 0x12, 0x7F, 0x10},
+[; ;STE2007_nokia_1202_display.c: 120: {0x27, 0x45, 0x45, 0x45, 0x39},
+[; ;STE2007_nokia_1202_display.c: 121: {0x3C, 0x4A, 0x49, 0x49, 0x30},
+[; ;STE2007_nokia_1202_display.c: 122: {0x01, 0x71, 0x09, 0x05, 0x03},
+[; ;STE2007_nokia_1202_display.c: 123: {0x36, 0x49, 0x49, 0x49, 0x36},
+[; ;STE2007_nokia_1202_display.c: 124: {0x06, 0x49, 0x49, 0x29, 0x1E},
+[; ;STE2007_nokia_1202_display.c: 125: {0x00, 0x36, 0x36, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 126: {0x00, 0x56, 0x36, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 127: {0x00, 0x08, 0x14, 0x22, 0x41},
+[; ;STE2007_nokia_1202_display.c: 128: {0x14, 0x14, 0x14, 0x14, 0x14},
+[; ;STE2007_nokia_1202_display.c: 129: {0x41, 0x22, 0x14, 0x08, 0x00},
+[; ;STE2007_nokia_1202_display.c: 130: {0x02, 0x01, 0x51, 0x09, 0x06},
+[; ;STE2007_nokia_1202_display.c: 131: {0x32, 0x49, 0x79, 0x41, 0x3E},
+[; ;STE2007_nokia_1202_display.c: 132: {0x7E, 0x11, 0x11, 0x11, 0x7E},
+[; ;STE2007_nokia_1202_display.c: 133: {0x7F, 0x49, 0x49, 0x49, 0x36},
+[; ;STE2007_nokia_1202_display.c: 134: {0x3E, 0x41, 0x41, 0x41, 0x22},
+[; ;STE2007_nokia_1202_display.c: 135: {0x7F, 0x41, 0x41, 0x22, 0x1C},
+[; ;STE2007_nokia_1202_display.c: 136: {0x7F, 0x49, 0x49, 0x49, 0x41},
+[; ;STE2007_nokia_1202_display.c: 137: {0x7F, 0x09, 0x09, 0x01, 0x01},
+[; ;STE2007_nokia_1202_display.c: 138: {0x3E, 0x41, 0x41, 0x51, 0x32},
+[; ;STE2007_nokia_1202_display.c: 139: {0x7F, 0x08, 0x08, 0x08, 0x7F},
+[; ;STE2007_nokia_1202_display.c: 140: {0x00, 0x41, 0x7F, 0x41, 0x00},
+[; ;STE2007_nokia_1202_display.c: 141: {0x20, 0x40, 0x41, 0x3F, 0x01},
+[; ;STE2007_nokia_1202_display.c: 142: {0x7F, 0x08, 0x14, 0x22, 0x41},
+[; ;STE2007_nokia_1202_display.c: 143: {0x7F, 0x40, 0x40, 0x40, 0x40},
+[; ;STE2007_nokia_1202_display.c: 144: {0x7F, 0x02, 0x04, 0x02, 0x7F},
+[; ;STE2007_nokia_1202_display.c: 145: {0x7F, 0x04, 0x08, 0x10, 0x7F},
+[; ;STE2007_nokia_1202_display.c: 146: {0x3E, 0x41, 0x41, 0x41, 0x3E},
+[; ;STE2007_nokia_1202_display.c: 147: {0x7F, 0x09, 0x09, 0x09, 0x06},
+[; ;STE2007_nokia_1202_display.c: 148: {0x3E, 0x41, 0x51, 0x21, 0x5E},
+[; ;STE2007_nokia_1202_display.c: 149: {0x7F, 0x09, 0x19, 0x29, 0x46},
+[; ;STE2007_nokia_1202_display.c: 150: {0x46, 0x49, 0x49, 0x49, 0x31},
+[; ;STE2007_nokia_1202_display.c: 151: {0x01, 0x01, 0x7F, 0x01, 0x01},
+[; ;STE2007_nokia_1202_display.c: 152: {0x3F, 0x40, 0x40, 0x40, 0x3F},
+[; ;STE2007_nokia_1202_display.c: 153: {0x1F, 0x20, 0x40, 0x20, 0x1F},
+[; ;STE2007_nokia_1202_display.c: 154: {0x7F, 0x20, 0x18, 0x20, 0x7F},
+[; ;STE2007_nokia_1202_display.c: 155: {0x63, 0x14, 0x08, 0x14, 0x63},
+[; ;STE2007_nokia_1202_display.c: 156: {0x03, 0x04, 0x78, 0x04, 0x03},
+[; ;STE2007_nokia_1202_display.c: 157: {0x61, 0x51, 0x49, 0x45, 0x43},
+[; ;STE2007_nokia_1202_display.c: 158: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 159: {0x02, 0x04, 0x08, 0x10, 0x20},
+[; ;STE2007_nokia_1202_display.c: 160: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 161: {0x04, 0x02, 0x01, 0x02, 0x04},
+[; ;STE2007_nokia_1202_display.c: 162: {0x40, 0x40, 0x40, 0x40, 0x40},
+[; ;STE2007_nokia_1202_display.c: 163: {0x00, 0x01, 0x02, 0x04, 0x00},
+[; ;STE2007_nokia_1202_display.c: 164: {0x20, 0x54, 0x54, 0x54, 0x78},
+[; ;STE2007_nokia_1202_display.c: 165: {0x7F, 0x48, 0x44, 0x44, 0x38},
+[; ;STE2007_nokia_1202_display.c: 166: {0x38, 0x44, 0x44, 0x44, 0x20},
+[; ;STE2007_nokia_1202_display.c: 167: {0x38, 0x44, 0x44, 0x48, 0x7F},
+[; ;STE2007_nokia_1202_display.c: 168: {0x38, 0x54, 0x54, 0x54, 0x18},
+[; ;STE2007_nokia_1202_display.c: 169: {0x08, 0x7E, 0x09, 0x01, 0x02},
+[; ;STE2007_nokia_1202_display.c: 170: {0x08, 0x14, 0x54, 0x54, 0x3C},
+[; ;STE2007_nokia_1202_display.c: 171: {0x7F, 0x08, 0x04, 0x04, 0x78},
+[; ;STE2007_nokia_1202_display.c: 172: {0x00, 0x44, 0x7D, 0x40, 0x00},
+[; ;STE2007_nokia_1202_display.c: 173: {0x20, 0x40, 0x44, 0x3D, 0x00},
+[; ;STE2007_nokia_1202_display.c: 174: {0x00, 0x7F, 0x10, 0x28, 0x44},
+[; ;STE2007_nokia_1202_display.c: 175: {0x00, 0x41, 0x7F, 0x40, 0x00},
+[; ;STE2007_nokia_1202_display.c: 176: {0x7C, 0x04, 0x18, 0x04, 0x78},
+[; ;STE2007_nokia_1202_display.c: 177: {0x7C, 0x08, 0x04, 0x04, 0x78},
+[; ;STE2007_nokia_1202_display.c: 178: {0x38, 0x44, 0x44, 0x44, 0x38},
+[; ;STE2007_nokia_1202_display.c: 179: {0x7C, 0x14, 0x14, 0x14, 0x08},
+[; ;STE2007_nokia_1202_display.c: 180: {0x08, 0x14, 0x14, 0x18, 0x7C},
+[; ;STE2007_nokia_1202_display.c: 181: {0x7C, 0x08, 0x04, 0x04, 0x08},
+[; ;STE2007_nokia_1202_display.c: 182: {0x48, 0x54, 0x54, 0x54, 0x20},
+[; ;STE2007_nokia_1202_display.c: 183: {0x04, 0x3F, 0x44, 0x40, 0x20},
+[; ;STE2007_nokia_1202_display.c: 184: {0x3C, 0x40, 0x40, 0x20, 0x7C},
+[; ;STE2007_nokia_1202_display.c: 185: {0x1C, 0x20, 0x40, 0x20, 0x1C},
+[; ;STE2007_nokia_1202_display.c: 186: {0x3C, 0x40, 0x30, 0x40, 0x3C},
+[; ;STE2007_nokia_1202_display.c: 187: {0x44, 0x28, 0x10, 0x28, 0x44},
+[; ;STE2007_nokia_1202_display.c: 188: {0x0C, 0x50, 0x50, 0x50, 0x3C},
+[; ;STE2007_nokia_1202_display.c: 189: {0x44, 0x64, 0x54, 0x4C, 0x44},
+[; ;STE2007_nokia_1202_display.c: 190: {0x00, 0x08, 0x36, 0x41, 0x00},
+[; ;STE2007_nokia_1202_display.c: 191: {0x00, 0x00, 0x7F, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 192: {0x00, 0x41, 0x36, 0x08, 0x00},
+[; ;STE2007_nokia_1202_display.c: 193: {0x02, 0x01, 0x02, 0x04, 0x02},
+[; ;STE2007_nokia_1202_display.c: 194: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 195: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 196: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 197: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 198: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 199: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 200: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 201: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 202: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 203: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 204: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 205: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 206: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 207: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 208: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 209: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 210: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 211: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 212: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 213: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 214: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 215: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 216: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 217: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 218: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 219: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 220: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 221: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 222: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 223: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 224: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 225: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 226: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 227: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 228: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 229: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 230: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 231: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 232: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 233: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 234: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 235: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 236: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 237: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 238: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 239: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 240: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 241: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 242: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 243: {0x00, 0x00, 0x07, 0x05, 0x07},
+[; ;STE2007_nokia_1202_display.c: 244: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 245: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 246: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 247: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 248: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 249: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 250: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 251: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 252: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 253: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 254: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 255: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 256: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 257: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 258: {0x00, 0x00, 0x00, 0x00, 0x00},
+[; ;STE2007_nokia_1202_display.c: 259: { 0x7E, 0x11, 0x11, 0x11, 0x7E },
+[; ;STE2007_nokia_1202_display.c: 260: { 0x7F, 0x49, 0x49, 0x49, 0x33 },
+[; ;STE2007_nokia_1202_display.c: 261: { 0x7F, 0x49, 0x49, 0x49, 0x36 },
+[; ;STE2007_nokia_1202_display.c: 262: { 0x7F, 0x01, 0x01, 0x01, 0x03 },
+[; ;STE2007_nokia_1202_display.c: 263: { 0xE0, 0x51, 0x4F, 0x41, 0xFF },
+[; ;STE2007_nokia_1202_display.c: 264: { 0x7F, 0x49, 0x49, 0x49, 0x49 },
+[; ;STE2007_nokia_1202_display.c: 265: { 0x77, 0x08, 0x7F, 0x08, 0x77 },
+[; ;STE2007_nokia_1202_display.c: 266: { 0x49, 0x49, 0x49, 0x49, 0x36 },
+[; ;STE2007_nokia_1202_display.c: 267: { 0x7F, 0x10, 0x08, 0x04, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 268: { 0x7C, 0x21, 0x12, 0x09, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 269: { 0x7F, 0x08, 0x14, 0x22, 0x41 },
+[; ;STE2007_nokia_1202_display.c: 270: { 0x20, 0x41, 0x3F, 0x01, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 271: { 0x7F, 0x02, 0x0C, 0x02, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 272: { 0x7F, 0x08, 0x08, 0x08, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 273: { 0x3E, 0x41, 0x41, 0x41, 0x3E },
+[; ;STE2007_nokia_1202_display.c: 274: { 0x7F, 0x01, 0x01, 0x01, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 275: { 0x7F, 0x09, 0x09, 0x09, 0x06 },
+[; ;STE2007_nokia_1202_display.c: 276: { 0x3E, 0x41, 0x41, 0x41, 0x22 },
+[; ;STE2007_nokia_1202_display.c: 277: { 0x01, 0x01, 0x7F, 0x01, 0x01 },
+[; ;STE2007_nokia_1202_display.c: 278: { 0x27, 0x48, 0x48, 0x48, 0x3F },
+[; ;STE2007_nokia_1202_display.c: 279: { 0x1C, 0x22, 0x7F, 0x22, 0x1C },
+[; ;STE2007_nokia_1202_display.c: 280: { 0x63, 0x14, 0x08, 0x14, 0x63 },
+[; ;STE2007_nokia_1202_display.c: 281: { 0x7F, 0x40, 0x40, 0x40, 0xFF },
+[; ;STE2007_nokia_1202_display.c: 282: { 0x07, 0x08, 0x08, 0x08, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 283: { 0x7F, 0x40, 0x7F, 0x40, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 284: { 0x7F, 0x40, 0x7F, 0x40, 0xFF },
+[; ;STE2007_nokia_1202_display.c: 285: { 0x01, 0x7F, 0x48, 0x48, 0x30 },
+[; ;STE2007_nokia_1202_display.c: 286: { 0x7F, 0x48, 0x30, 0x00, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 287: { 0x7F, 0x48, 0x48, 0x30, 0x00 },
+[; ;STE2007_nokia_1202_display.c: 288: { 0x22, 0x41, 0x49, 0x49, 0x3E },
+[; ;STE2007_nokia_1202_display.c: 289: { 0x7F, 0x08, 0x3E, 0x41, 0x3E },
+[; ;STE2007_nokia_1202_display.c: 290: { 0x46, 0x29, 0x19, 0x09, 0x7F },
+[; ;STE2007_nokia_1202_display.c: 291: { 0x20, 0x54, 0x54, 0x54, 0x78 },
+[; ;STE2007_nokia_1202_display.c: 292: { 0x3C, 0x4A, 0x4A, 0x49, 0x31 },
+[; ;STE2007_nokia_1202_display.c: 293: { 0x7C, 0x54, 0x54, 0x28, 0x00 },
+[; ;STE2007_nokia_1202_display.c: 294: { 0x7C, 0x04, 0x04, 0x04, 0x0C },
+[; ;STE2007_nokia_1202_display.c: 295: { 0xE0, 0x54, 0x4C, 0x44, 0xFC },
+[; ;STE2007_nokia_1202_display.c: 296: { 0x38, 0x54, 0x54, 0x54, 0x08 },
+[; ;STE2007_nokia_1202_display.c: 297: { 0x6C, 0x10, 0x7C, 0x10, 0x6C },
+[; ;STE2007_nokia_1202_display.c: 298: { 0x44, 0x44, 0x54, 0x54, 0x28 },
+[; ;STE2007_nokia_1202_display.c: 299: { 0x7C, 0x20, 0x10, 0x08, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 300: { 0x78, 0x42, 0x24, 0x12, 0x78 },
+[; ;STE2007_nokia_1202_display.c: 301: { 0x7C, 0x10, 0x28, 0x44, 0x00 },
+[; ;STE2007_nokia_1202_display.c: 302: { 0x20, 0x44, 0x3C, 0x04, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 303: { 0x7C, 0x08, 0x10, 0x08, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 304: { 0x7C, 0x10, 0x10, 0x10, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 305: { 0x38, 0x44, 0x44, 0x44, 0x38 },
+[; ;STE2007_nokia_1202_display.c: 306: { 0x7C, 0x04, 0x04, 0x04, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 307: { 0x7C, 0x14, 0x14, 0x14, 0x08 },
+[; ;STE2007_nokia_1202_display.c: 308: { 0x38, 0x44, 0x44, 0x44, 0x44 },
+[; ;STE2007_nokia_1202_display.c: 309: { 0x04, 0x04, 0x7C, 0x04, 0x04 },
+[; ;STE2007_nokia_1202_display.c: 310: { 0x0C, 0x50, 0x50, 0x50, 0x3C },
+[; ;STE2007_nokia_1202_display.c: 311: { 0x18, 0x24, 0x7E, 0x24, 0x18 },
+[; ;STE2007_nokia_1202_display.c: 312: { 0x44, 0x28, 0x10, 0x28, 0x44 },
+[; ;STE2007_nokia_1202_display.c: 313: { 0x7C, 0x40, 0x40, 0x40, 0xFC },
+[; ;STE2007_nokia_1202_display.c: 314: { 0x0C, 0x10, 0x10, 0x10, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 315: { 0x7C, 0x40, 0x7C, 0x40, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 316: { 0x7C, 0x40, 0x7C, 0x40, 0xFC },
+[; ;STE2007_nokia_1202_display.c: 317: { 0x04, 0x7C, 0x50, 0x50, 0x20 },
+[; ;STE2007_nokia_1202_display.c: 318: { 0x7C, 0x50, 0x20, 0x00, 0x7C },
+[; ;STE2007_nokia_1202_display.c: 319: { 0x7C, 0x50, 0x50, 0x20, 0x00 },
+[; ;STE2007_nokia_1202_display.c: 320: { 0x28, 0x44, 0x54, 0x54, 0x38 },
+[; ;STE2007_nokia_1202_display.c: 321: { 0x7C, 0x10, 0x38, 0x44, 0x38 },
+[; ;STE2007_nokia_1202_display.c: 322: { 0x08, 0x54, 0x34, 0x14, 0x7C }
+[; ;STE2007_nokia_1202_display.c: 323: };
+"325
+[v _temp_char `Cuc ~T0 @X0 -> 10 `i e ]
+[i _temp_char
+:U ..
+"326
+-> -> 48 `i `uc
+"327
+-> -> 49 `i `uc
+"328
+-> -> 50 `i `uc
+"329
+-> -> 51 `i `uc
+"330
+-> -> 52 `i `uc
+"331
+-> -> 53 `i `uc
+"332
+-> -> 54 `i `uc
+"333
+-> -> 55 `i `uc
+"334
+-> -> 56 `i `uc
+"336
+-> -> 57 `i `uc
+..
+]
+[; ;STE2007_nokia_1202_display.c: 325: const unsigned char temp_char[10]={
+[; ;STE2007_nokia_1202_display.c: 326: 0x30,
+[; ;STE2007_nokia_1202_display.c: 327: 0x31,
+[; ;STE2007_nokia_1202_display.c: 328: 0x32,
+[; ;STE2007_nokia_1202_display.c: 329: 0x33,
+[; ;STE2007_nokia_1202_display.c: 330: 0x34,
+[; ;STE2007_nokia_1202_display.c: 331: 0x35,
+[; ;STE2007_nokia_1202_display.c: 332: 0x36,
+[; ;STE2007_nokia_1202_display.c: 333: 0x37,
+[; ;STE2007_nokia_1202_display.c: 334: 0x38,
+[; ;STE2007_nokia_1202_display.c: 335: 0x39
+[; ;STE2007_nokia_1202_display.c: 336: };
+"353
+[v _delay_1 `(v ~T0 @X0 1 ef ]
+"354
+{
+[; ;STE2007_nokia_1202_display.c: 353: void delay_1(void)
+[; ;STE2007_nokia_1202_display.c: 354: {
+[e :U _delay_1 ]
+[f ]
+"355
+[v _i `i ~T0 @X0 1 a ]
+[; ;STE2007_nokia_1202_display.c: 355: int i=4000;
+[e = _i -> 4000 `i ]
+[; ;STE2007_nokia_1202_display.c: 356: while(i){i--;}
+"356
+[e $U 89  ]
+[e :U 90 ]
+{
+[e -- _i -> 1 `i ]
+}
+[e :U 89 ]
+[e $ != _i -> 0 `i 90  ]
+[e :U 91 ]
+[; ;STE2007_nokia_1202_display.c: 357: }
+"357
+[e :UE 88 ]
+}
+"359
+[v _delay_2 `(v ~T0 @X0 1 ef ]
+"360
+{
+[; ;STE2007_nokia_1202_display.c: 359: void delay_2(void)
+[; ;STE2007_nokia_1202_display.c: 360: {
+[e :U _delay_2 ]
+[f ]
+"361
+[v _i `i ~T0 @X0 1 a ]
+[; ;STE2007_nokia_1202_display.c: 361: int i=2000;
+[e = _i -> 2000 `i ]
+[; ;STE2007_nokia_1202_display.c: 362: while(i){i--;}
+"362
+[e $U 93  ]
+[e :U 94 ]
+{
+[e -- _i -> 1 `i ]
+}
+[e :U 93 ]
+[e $ != _i -> 0 `i 94  ]
+[e :U 95 ]
+[; ;STE2007_nokia_1202_display.c: 363: }
+"363
+[e :UE 92 ]
+}
+"368
+[v _transmit_command `(v ~T0 @X0 1 ef1`uc ]
+"369
+{
+[; ;STE2007_nokia_1202_display.c: 368: void transmit_command(char command)
+[; ;STE2007_nokia_1202_display.c: 369: {
+[e :U _transmit_command ]
+"368
+[v _command `uc ~T0 @X0 1 r1 ]
+"369
+[f ]
+[; ;STE2007_nokia_1202_display.c: 370: delay_2();
+"370
+[e ( _delay_2 ..  ]
+[; ;STE2007_nokia_1202_display.c: 371: PORTBbits.RB1=0;
+"371
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 372: PORTBbits.RB2=0;
+"372
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 373: PORTBbits.RB1=1;
+"373
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 375: for(unsigned char i=0;i<8;i++)
+"375
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 97  ]
+[e $U 98  ]
+"376
+[e :U 97 ]
+[; ;STE2007_nokia_1202_display.c: 376: {
+{
+[; ;STE2007_nokia_1202_display.c: 377: PORTBbits.RB1=0;
+"377
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 378: if(command&0x80)
+"378
+[e $ ! != & -> _command `i -> 128 `i -> 0 `i 100  ]
+[; ;STE2007_nokia_1202_display.c: 379: {PORTBbits.RB2=1;}
+"379
+{
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+}
+[e $U 101  ]
+"380
+[e :U 100 ]
+[; ;STE2007_nokia_1202_display.c: 380: else
+[; ;STE2007_nokia_1202_display.c: 381: {PORTBbits.RB2=0;}
+"381
+{
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 101 ]
+[; ;STE2007_nokia_1202_display.c: 383: PORTBbits.RB1=1;
+"383
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 384: command<<=1;
+"384
+[e =<< _command -> 1 `i ]
+"385
+}
+"375
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 97  ]
+[e :U 98 ]
+"385
+}
+[; ;STE2007_nokia_1202_display.c: 385: }
+[; ;STE2007_nokia_1202_display.c: 387: }
+"387
+[e :UE 96 ]
+}
+"389
+[v _transmit_data `(v ~T0 @X0 1 ef1`uc ]
+"390
+{
+[; ;STE2007_nokia_1202_display.c: 389: void transmit_data(char data)
+[; ;STE2007_nokia_1202_display.c: 390: {
+[e :U _transmit_data ]
+"389
+[v _data `uc ~T0 @X0 1 r1 ]
+"390
+[f ]
+[; ;STE2007_nokia_1202_display.c: 391: PORTBbits.RB1=0;
+"391
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 392: PORTBbits.RB2=1;
+"392
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 393: PORTBbits.RB1=1;
+"393
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 395: for(unsigned char i=0;i<8;i++)
+"395
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 103  ]
+[e $U 104  ]
+"396
+[e :U 103 ]
+[; ;STE2007_nokia_1202_display.c: 396: {
+{
+[; ;STE2007_nokia_1202_display.c: 397: PORTBbits.RB1=0;
+"397
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 398: if(data&0x80)
+"398
+[e $ ! != & -> _data `i -> 128 `i -> 0 `i 106  ]
+[; ;STE2007_nokia_1202_display.c: 399: {PORTBbits.RB2=1;}
+"399
+{
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+}
+[e $U 107  ]
+"400
+[e :U 106 ]
+[; ;STE2007_nokia_1202_display.c: 400: else
+[; ;STE2007_nokia_1202_display.c: 401: {PORTBbits.RB2=0;}
+"401
+{
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 107 ]
+[; ;STE2007_nokia_1202_display.c: 403: PORTBbits.RB1=1;
+"403
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 404: data<<=1;
+"404
+[e =<< _data -> 1 `i ]
+"406
+}
+"395
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 103  ]
+[e :U 104 ]
+"406
+}
+[; ;STE2007_nokia_1202_display.c: 406: }
+[; ;STE2007_nokia_1202_display.c: 408: }
+"408
+[e :UE 102 ]
+}
+"410
+[v _Page_and_Column_adress_set `(v ~T0 @X0 1 ef2`uc`uc ]
+"411
+{
+[; ;STE2007_nokia_1202_display.c: 410: void Page_and_Column_adress_set(char Page, char Column)
+[; ;STE2007_nokia_1202_display.c: 411: {
+[e :U _Page_and_Column_adress_set ]
+"410
+[v _Page `uc ~T0 @X0 1 r1 ]
+[v _Column `uc ~T0 @X0 1 r2 ]
+"411
+[f ]
+[; ;STE2007_nokia_1202_display.c: 413: transmit_command(0xB0|Page);
+"413
+[e ( _transmit_command (1 -> | -> 176 `i -> _Page `i `uc ]
+"418
+[v _c0 `uc ~T0 @X0 1 a ]
+[; ;STE2007_nokia_1202_display.c: 418: char c0=0x10, c1=0;
+[e = _c0 -> -> 16 `i `uc ]
+[v _c1 `uc ~T0 @X0 1 a ]
+[e = _c1 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 419: c1=Column&0x0F;
+"419
+[e = _c1 -> & -> _Column `i -> 15 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 420: c0=((Column&0x70)>>4)|0x10;
+"420
+[e = _c0 -> | >> & -> _Column `i -> 112 `i -> 4 `i -> 16 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 421: transmit_command(c0);
+"421
+[e ( _transmit_command (1 _c0 ]
+[; ;STE2007_nokia_1202_display.c: 422: transmit_command(c1);
+"422
+[e ( _transmit_command (1 _c1 ]
+[; ;STE2007_nokia_1202_display.c: 424: }
+"424
+[e :UE 108 ]
+}
+"426
+[v _Display_symbol `(v ~T0 @X0 1 ef1`uc ]
+"427
+{
+[; ;STE2007_nokia_1202_display.c: 426: void Display_symbol(char char_0)
+[; ;STE2007_nokia_1202_display.c: 427: {
+[e :U _Display_symbol ]
+"426
+[v _char_0 `uc ~T0 @X0 1 r1 ]
+"427
+[f ]
+[; ;STE2007_nokia_1202_display.c: 428: transmit_data(nlcd_Font[char_0][0]);
+"428
+[e ( _transmit_data (1 *U + &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 429: transmit_data(nlcd_Font[char_0][1]);
+"429
+[e ( _transmit_data (1 *U + &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 430: transmit_data(nlcd_Font[char_0][2]);
+"430
+[e ( _transmit_data (1 *U + &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 431: transmit_data(nlcd_Font[char_0][3]);
+"431
+[e ( _transmit_data (1 *U + &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 432: transmit_data(nlcd_Font[char_0][4]);
+"432
+[e ( _transmit_data (1 *U + &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux * -> -> -> 4 `i `ui `ux -> -> # *U &U *U + &U _nlcd_Font * -> _char_0 `ux -> * -> # *U &U *U &U _nlcd_Font `ui -> -> 5 `i `ui `ux `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 433: }
+"433
+[e :UE 109 ]
+}
+"435
+[v _output_character_array `(v ~T0 @X0 1 ef1`*uc ]
+"436
+{
+[; ;STE2007_nokia_1202_display.c: 435: void output_character_array(char array[])
+[; ;STE2007_nokia_1202_display.c: 436: {
+[e :U _output_character_array ]
+"435
+[v _array `*uc ~T0 @X0 1 r1 ]
+"436
+[f ]
+[; ;STE2007_nokia_1202_display.c: 437: for(int i=0;array[i]!='\n';i++)
+"437
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 114  ]
+"438
+[e :U 111 ]
+[; ;STE2007_nokia_1202_display.c: 438: {
+{
+[; ;STE2007_nokia_1202_display.c: 439: Display_symbol(array[i]);
+"439
+[e ( _Display_symbol (1 *U + _array * -> _i `x -> -> # *U _array `i `x ]
+[; ;STE2007_nokia_1202_display.c: 440: transmit_data(0x00);
+"440
+[e ( _transmit_data (1 -> -> 0 `i `uc ]
+"441
+}
+"437
+[e ++ _i -> 1 `i ]
+[e :U 114 ]
+[e $ != -> *U + _array * -> _i `x -> -> # *U _array `i `x `ui -> 10 `ui 111  ]
+[e :U 112 ]
+"441
+}
+[; ;STE2007_nokia_1202_display.c: 441: }
+[; ;STE2007_nokia_1202_display.c: 442: }
+"442
+[e :UE 110 ]
+}
+"446
+[v _ste2007_display_driver `(v ~T0 @X0 1 ef1`S1 ]
+"447
+{
+[; ;STE2007_nokia_1202_display.c: 446: void ste2007_display_driver(struct display_dc d)
+[; ;STE2007_nokia_1202_display.c: 447: {
+[e :U _ste2007_display_driver ]
+"446
+[v _d `S1 ~T0 @X0 1 r1 ]
+"447
+[f ]
+[; ;STE2007_nokia_1202_display.c: 449: if(d.word==display_initialization)
+"449
+[e $ ! == -> . _d 0 `i -> . `E1 0 `i 116  ]
+[; ;STE2007_nokia_1202_display.c: 450: {
+"450
+{
+[; ;STE2007_nokia_1202_display.c: 451: PORTBbits.RB0=1;
+"451
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 452: PORTBbits.RB4=0;
+"452
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 453: delay_1();
+"453
+[e ( _delay_1 ..  ]
+[; ;STE2007_nokia_1202_display.c: 455: PORTBbits.RB3=0;
+"455
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 456: PORTBbits.RB4=1;
+"456
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 458: delay_1();
+"458
+[e ( _delay_1 ..  ]
+[; ;STE2007_nokia_1202_display.c: 460: transmit_command(0xE2);
+"460
+[e ( _transmit_command (1 -> -> 226 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 470: transmit_command(0x20);
+"470
+[e ( _transmit_command (1 -> -> 32 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 472: transmit_command(0x90);
+"472
+[e ( _transmit_command (1 -> -> 144 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 482: transmit_command(0xA4);
+"482
+[e ( _transmit_command (1 -> -> 164 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 484: transmit_command(0xE1);
+"484
+[e ( _transmit_command (1 -> -> 225 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 485: transmit_command(0x80);
+"485
+[e ( _transmit_command (1 -> -> 128 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 487: transmit_command(0x2F);
+"487
+[e ( _transmit_command (1 -> -> 47 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 488: transmit_command(0xEF);
+"488
+[e ( _transmit_command (1 -> -> 239 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 489: transmit_command(0x00);
+"489
+[e ( _transmit_command (1 -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 490: transmit_command(0xAF);
+"490
+[e ( _transmit_command (1 -> -> 175 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 492: Page_and_Column_adress_set(0,0);
+"492
+[e ( _Page_and_Column_adress_set (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"494
+}
+[; ;STE2007_nokia_1202_display.c: 494: }
+[e $U 117  ]
+"496
+[e :U 116 ]
+[; ;STE2007_nokia_1202_display.c: 496: else if(d.word==clear_all)
+[e $ ! == -> . _d 0 `i -> . `E1 1 `i 118  ]
+[; ;STE2007_nokia_1202_display.c: 497: {
+"497
+{
+[; ;STE2007_nokia_1202_display.c: 498: Page_and_Column_adress_set(0,0);
+"498
+[e ( _Page_and_Column_adress_set (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 500: for (int num=0;num<=767;num++)
+"500
+{
+[v _num `i ~T0 @X0 1 a ]
+[e = _num -> 0 `i ]
+[e $ <= _num -> 767 `i 119  ]
+[e $U 120  ]
+"501
+[e :U 119 ]
+[; ;STE2007_nokia_1202_display.c: 501: {
+{
+[; ;STE2007_nokia_1202_display.c: 502: transmit_data(0x00);
+"502
+[e ( _transmit_data (1 -> -> 0 `i `uc ]
+"503
+}
+"500
+[e ++ _num -> 1 `i ]
+[e $ <= _num -> 767 `i 119  ]
+[e :U 120 ]
+"503
+}
+"504
+}
+[; ;STE2007_nokia_1202_display.c: 503: }
+[; ;STE2007_nokia_1202_display.c: 504: }
+[e $U 122  ]
+"507
+[e :U 118 ]
+[; ;STE2007_nokia_1202_display.c: 507: else if(d.word==permanent_caption_display)
+[e $ ! == -> . _d 0 `i -> . `E1 2 `i 123  ]
+[; ;STE2007_nokia_1202_display.c: 508: {
+"508
+{
+[v F1039 `uc ~T0 @X0 -> 0 `x s ]
+[i F1039
+:U ..
+-> 83 `c
+-> 112 `c
+-> 101 `c
+-> 101 `c
+-> 100 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 10 `c
+-> 0 `c
+..
+]
+"511
+[v _speed_word `uc ~T0 @X0 18  a ]
+[; ;STE2007_nokia_1202_display.c: 511: char speed_word[]="Speed           \n";
+[e = _speed_word F1039 ]
+[; ;STE2007_nokia_1202_display.c: 513: Page_and_Column_adress_set(0,0);
+"513
+[e ( _Page_and_Column_adress_set (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 514: output_character_array(speed_word);
+"514
+[e ( _output_character_array (1 &U _speed_word ]
+"527
+}
+[; ;STE2007_nokia_1202_display.c: 527: }
+[e $U 124  ]
+"530
+[e :U 123 ]
+[; ;STE2007_nokia_1202_display.c: 530: else if(d.word==speed_displaying)
+[e $ ! == -> . _d 0 `i -> . `E1 5 `i 125  ]
+[; ;STE2007_nokia_1202_display.c: 531: {
+"531
+{
+[v F1041 `uc ~T0 @X0 -> 0 `x s ]
+[i F1041
+:U ..
+-> 32 `c
+-> 50 `c
+-> 50 `c
+-> 32 `c
+-> 107 `c
+-> 109 `c
+-> 47 `c
+-> 104 `c
+-> 10 `c
+-> 0 `c
+..
+]
+"532
+[v _speed `uc ~T0 @X0 10  a ]
+[; ;STE2007_nokia_1202_display.c: 532: char speed[]=" 22 km/h\n";
+[e = _speed F1041 ]
+"533
+[v _Discharge_0 `i ~T0 @X0 1 a ]
+[; ;STE2007_nokia_1202_display.c: 533: int Discharge_0=0;
+[e = _Discharge_0 -> 0 `i ]
+"534
+[v _Discharge_1 `i ~T0 @X0 1 a ]
+[; ;STE2007_nokia_1202_display.c: 534: int Discharge_1=0;
+[e = _Discharge_1 -> 0 `i ]
+"535
+[v _Discharge_2 `i ~T0 @X0 1 a ]
+[; ;STE2007_nokia_1202_display.c: 535: int Discharge_2=0;
+[e = _Discharge_2 -> 0 `i ]
+[; ;STE2007_nokia_1202_display.c: 537: Discharge_0 = d.speed%10;
+"537
+[e = _Discharge_0 % . _d 3 -> 10 `i ]
+[; ;STE2007_nokia_1202_display.c: 538: Discharge_1 = (d.speed/10)%10;
+"538
+[e = _Discharge_1 % / . _d 3 -> 10 `i -> 10 `i ]
+[; ;STE2007_nokia_1202_display.c: 539: Discharge_2 = (d.speed/100)%10;
+"539
+[e = _Discharge_2 % / . _d 3 -> 100 `i -> 10 `i ]
+[; ;STE2007_nokia_1202_display.c: 541: speed[2] = temp_char[Discharge_0];
+"541
+[e = *U + &U _speed * -> -> -> 2 `i `ui `ux -> -> # *U &U _speed `ui `ux *U + &U _temp_char * -> -> _Discharge_0 `ui `ux -> -> # *U &U _temp_char `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 542: speed[1] = temp_char[Discharge_1];
+"542
+[e = *U + &U _speed * -> -> -> 1 `i `ui `ux -> -> # *U &U _speed `ui `ux *U + &U _temp_char * -> -> _Discharge_1 `ui `ux -> -> # *U &U _temp_char `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 543: speed[0] = temp_char[Discharge_2];
+"543
+[e = *U + &U _speed * -> -> -> 0 `i `ui `ux -> -> # *U &U _speed `ui `ux *U + &U _temp_char * -> -> _Discharge_2 `ui `ux -> -> # *U &U _temp_char `ui `ux ]
+[; ;STE2007_nokia_1202_display.c: 545: Page_and_Column_adress_set(0,49);
+"545
+[e ( _Page_and_Column_adress_set (2 , -> -> 0 `i `uc -> -> 49 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 546: output_character_array(speed);
+"546
+[e ( _output_character_array (1 &U _speed ]
+"547
+}
+[; ;STE2007_nokia_1202_display.c: 547: }
+[e $U 126  ]
+"550
+[e :U 125 ]
+[; ;STE2007_nokia_1202_display.c: 550: else if(d.word==temperature_displaying)
+[e $ ! == -> . _d 0 `i -> . `E1 3 `i 127  ]
+[; ;STE2007_nokia_1202_display.c: 551: {
+"551
+{
+[; ;STE2007_nokia_1202_display.c: 552: ;
+"553
+}
+[; ;STE2007_nokia_1202_display.c: 553: }
+[e $U 128  ]
+"554
+[e :U 127 ]
+[; ;STE2007_nokia_1202_display.c: 554: else if(d.word==LCD_Full)
+[e $ ! == -> . _d 0 `i -> . `E1 4 `i 129  ]
+[; ;STE2007_nokia_1202_display.c: 555: {
+"555
+{
+"556
+[v _num `uc ~T0 @X0 1 a ]
+[; ;STE2007_nokia_1202_display.c: 556: char num = 0;
+[e = _num -> -> 0 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 558: for (num=0;num<=172;num++)
+"558
+{
+[e = _num -> -> 0 `i `uc ]
+[e $ <= -> _num `i -> 172 `i 130  ]
+[e $U 131  ]
+"559
+[e :U 130 ]
+[; ;STE2007_nokia_1202_display.c: 559: {
+{
+[; ;STE2007_nokia_1202_display.c: 560: transmit_data(0x46);
+"560
+[e ( _transmit_data (1 -> -> 70 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 561: transmit_data(0x49);
+"561
+[e ( _transmit_data (1 -> -> 73 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 562: transmit_data(0x49);
+"562
+[e ( _transmit_data (1 -> -> 73 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 563: transmit_data(0x49);
+"563
+[e ( _transmit_data (1 -> -> 73 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 564: transmit_data(0x31);
+"564
+[e ( _transmit_data (1 -> -> 49 `i `uc ]
+[; ;STE2007_nokia_1202_display.c: 565: transmit_data(0x00);
+"565
+[e ( _transmit_data (1 -> -> 0 `i `uc ]
+"566
+}
+"558
+[e ++ _num -> -> 1 `i `uc ]
+[e $ <= -> _num `i -> 172 `i 130  ]
+[e :U 131 ]
+"566
+}
+"567
+}
+[e :U 129 ]
+"568
+[e :U 128 ]
+[e :U 126 ]
+[e :U 124 ]
+[e :U 122 ]
+[e :U 117 ]
+[; ;STE2007_nokia_1202_display.c: 566: }
+[; ;STE2007_nokia_1202_display.c: 567: }
+[; ;STE2007_nokia_1202_display.c: 568: }
+[e :UE 115 ]
+}
